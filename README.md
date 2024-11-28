@@ -31,7 +31,6 @@ This project aims to predict customer churn in the telecommunications industry u
 
 **3. Exploratory Data Analysis (EDA)**
 Insights:
-
 - Higher monthly charges and shorter tenure correlate with increased churn.
 - Non-churners are predominantly on two-year contracts with lower monthly charges.
 - Churners commonly use electronic checks as their payment method.
@@ -50,28 +49,29 @@ Insights:
 - Optimization: PCA preserved 95% variance; hyperparameter tuning improved model performance.
 ![image](https://github.com/user-attachments/assets/b4ca4b13-5847-4307-a01c-bd285b51ffb0)
 
+
 **5. Model Validation and Tuning**
 - Cross-Validation: Repeated 10-fold CV achieved the most robust validation scores.
 ![image](https://github.com/user-attachments/assets/cfc65c6a-40d3-4465-8a9c-1e49d12d88f6)
 
 **Hyperparameter Tuning:**
-
 - Random Forest optimized with n_estimators=150, max_depth=50, and criterion='gini'.
 - SVM fine-tuned with kernel=rbf, gamma=auto, and C=7.
 - Logistic Regression optimized with solver=saga and C=1.0001.
   ![image](https://github.com/user-attachments/assets/d12a895b-5b85-42f4-83d0-b4ffd7017e30)
+![image](https://github.com/user-attachments/assets/b1ec2f3d-62a0-450a-b191-f58b1e5e3c7d)
 
 
 **Key Insights**
-**Feature Importance:**
-Top predictors: Total Charges, Monthly Charges, Contract Type (month-to-month), Tenure, Online Security.
+- **Feature Importance:**
+- Top predictors: Total Charges, Monthly Charges, Contract Type (month-to-month), Tenure, Online Security.
 
 **Performance:**
-RF with Randomized Search Hyperparameters (n_estimators= 150, min_samples_split= 10, min_samples_leaf= 4, max_features= 'log2', max_depth= 50, criterion= 'gini', bootstrap= True) achieved the highest accuracy of **86.10%**
+- RF with Randomized Search Hyperparameters (n_estimators= 150, min_samples_split= 10, min_samples_leaf= 4, max_features= 'log2', max_depth= 50, criterion= 'gini', bootstrap= True) achieved the highest accuracy of **86.10%**
 ![image](https://github.com/user-attachments/assets/8024f8f6-e25b-498e-bd6d-a86dd973ef92)
 
 
-**Conclusion**
+**Conclusion**: 
 This project demonstrates the application of advanced machine learning techniques and model optimization strategies to solve a real-world business problem. The resulting models provide actionable insights for targeted customer retention efforts, enabling telecommunications firms to minimize churn and maximize customer lifetime value.
 
 # **Project Title: Hotel Reservation Cancellation Prediction Using Data Analysis and Statistical Techniques in SAS**
