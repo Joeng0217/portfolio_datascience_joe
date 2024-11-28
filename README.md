@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/a12ddf5b-c98d-4b73-b351-56b1021fa694)##  **Prediction of Customer Churn Using Machine Learning and Ensemble Techniques**
+##  **Prediction of Customer Churn Using Machine Learning and Ensemble Techniques**
 # Abstract
 This project aims to predict customer churn in the telecommunications industry using various machine learning models, including Logistic Regression, Random Forest, and Support Vector Machine, alongside ensemble methods like XGBoost, AdaBoost, and Extra Trees Classifier. Key data preprocessing techniques such as SMOTE for class balancing and Principal Component Analysis (PCA) for dimensionality reduction were utilized. The Random Forest model optimized with Randomized Search CV achieved the highest accuracy of 86.10%, followed closely by XGBoost at 85.84%. The insights derived from this analysis support proactive customer retention strategies.
 
