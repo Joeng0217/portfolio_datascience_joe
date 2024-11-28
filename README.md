@@ -20,13 +20,13 @@ This project aims to predict customer churn in the telecommunications industry u
 **2. Data Preprocessing**
 
 - Class Balancing: Addressed 26.6% churn rate imbalance using **SMOTE**.
-![image](https://github.com/user-attachments/assets/ffa1c309-8681-4b44-8540-c72ae8219f69)
 
 - Feature Encoding: Converted binary and categorical features using**label** and **one-hot encoding**.
-![image](https://github.com/user-attachments/assets/675076c0-b2d3-45d4-95cc-56a814ad1a30)
+  
 ![image](https://github.com/user-attachments/assets/2458bf40-43d4-4919-b8e4-0fea56acf643)
 
 - Scaling: **Min-Max Scaling** applied to normalize skewed numerical data.
+  
 ![image](https://github.com/user-attachments/assets/a4741a71-3097-460c-96f8-f8ca39af84c7)
 
 **3. Exploratory Data Analysis (EDA)**
@@ -35,10 +35,15 @@ Insights:
 - Non-churners are predominantly on two-year contracts with lower monthly charges.
 - Churners commonly use electronic checks as their payment method.
 - Visualizations: **Correlation heatmaps, boxplots, and distribution charts highlighted key trends**.
+  
 ![image](https://github.com/user-attachments/assets/242ddf34-eb51-483f-9b46-74465887876b)
+
 ![image](https://github.com/user-attachments/assets/c2845634-3209-4cbd-955d-a6137fe5fe5e)
+
 ![image](https://github.com/user-attachments/assets/f5d27d8e-b06b-4aae-b804-7058243d4a8c)
+
 ![image](https://github.com/user-attachments/assets/ba3e996d-5100-4de4-9151-17beb066b0a2)
+
 ![image](https://github.com/user-attachments/assets/da4b12fc-2f06-4701-be32-e204db0316c7)
 
 
@@ -47,28 +52,27 @@ Insights:
 - Baseline Models: Logistic Regression, Random Forest, SVM.
 - Ensemble Models: AdaBoost, XGBoost, Extra Trees.
 - Optimization: PCA preserved 95% variance; hyperparameter tuning improved model performance.
+  
 ![image](https://github.com/user-attachments/assets/b4ca4b13-5847-4307-a01c-bd285b51ffb0)
+
 ![image](https://github.com/user-attachments/assets/3030b68d-2bc8-43d6-8672-2fa8000a575f)
 
 
 **5. Model Validation and Tuning**
 - Cross-Validation: Repeated 10-fold CV achieved the most robust validation scores.
-![image](https://github.com/user-attachments/assets/cfc65c6a-40d3-4465-8a9c-1e49d12d88f6)
-
+ 
 **Hyperparameter Tuning:**
 - Random Forest optimized with n_estimators=150, max_depth=50, and criterion='gini'.
 - SVM fine-tuned with kernel=rbf, gamma=auto, and C=7.
 - Logistic Regression optimized with solver=saga and C=1.0001.
+  
   ![image](https://github.com/user-attachments/assets/d12a895b-5b85-42f4-83d0-b4ffd7017e30)
-![image](https://github.com/user-attachments/assets/b1ec2f3d-62a0-450a-b191-f58b1e5e3c7d)
 
 
-**Key Insights**
-- **Feature Importance:**
-- Top predictors: Total Charges, Monthly Charges, Contract Type (month-to-month), Tenure, Online Security.
 
 **Performance:**
 - RF with Randomized Search Hyperparameters (n_estimators= 150, min_samples_split= 10, min_samples_leaf= 4, max_features= 'log2', max_depth= 50, criterion= 'gini', bootstrap= True) achieved the highest accuracy of **86.10%**
+  
 ![image](https://github.com/user-attachments/assets/8024f8f6-e25b-498e-bd6d-a86dd973ef92)
 
 **Comparison of the ensemble models** 
