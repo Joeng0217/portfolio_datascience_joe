@@ -1,30 +1,52 @@
-# portfolio_datascience_joe
-Data Scientist
-Technical Skills: Python, SQL, AWS, Snowflake, MATLAB
-Education
-Ph.D., Physics | The University of Texas at Dallas (May 2022)
-M.S., Physics | The University of Texas at Dallas (December 2019)
-B.S., Physics | The University of Texas at Dallas (May 2017)
-Work Experience
-Data Scientist @ Toyota Financial Services (June 2022 - Present)
+##  **Prediction of Customer Churn Using Machine Learning and Ensemble Techniques**
+# Abstract
+This project aims to predict customer churn in the telecommunications industry using various machine learning models, including Logistic Regression, Random Forest, and Support Vector Machine, alongside ensemble methods like XGBoost, AdaBoost, and Extra Trees Classifier. Key data preprocessing techniques such as SMOTE for class balancing and Principal Component Analysis (PCA) for dimensionality reduction were utilized. The Random Forest model optimized with Randomized Search CV achieved the highest accuracy of 86.10%, followed closely by XGBoost at 85.84%. The insights derived from this analysis support proactive customer retention strategies.
 
-Uncovered and corrected missing step in production data pipeline which impacted over 70% of active accounts
-Redeveloped loan originations model which resulted in 50% improvement in model performance and saving 1 million dollars in potential losses
-Data Science Consultant @ Shawhin Talebi Ventures LLC (December 2020 - Present)
+# Skills Demonstrated
+Machine Learning Models: Logistic Regression, Random Forest, Support Vector Machine (SVM), AdaBoost, XGBoost, Extra Trees Classifier.
+Data Preprocessing: Feature engineering, handling missing values, label encoding, one-hot encoding, and class balancing with SMOTE.
+Dimensionality Reduction: PCA with variance preservation (95%).
+Hyperparameter Tuning: Grid Search and Randomized Search CV for model optimization.
+Model Validation: 10-fold and repeated K-fold cross-validation to assess model robustness.
+Evaluation Metrics: ROC-AUC, F1-score, precision, recall, and confusion matrices.
+Programming Libraries: NumPy, Pandas, Scikit-learn, Seaborn, Matplotlib, Plotly, Imbalanced-learn.
 
-Conducted data collection, processing, and analysis for novel study evaluating the impact of over 300 biometrics variables on human performance in hyper-realistic, live-fire training scenarios
-Applied unsupervised deep learning approaches to longitudinal ICU data to discover novel sepsis sub-phenotypes
-Projects
-Data-Driven EEG Band Discovery with Decision Trees
-Publication
+# Process Breakdown
+1. Dataset Overview
+Source: Kaggle’s Telco Customer Churn Dataset (7043 instances, 21 features).
+Features: Customer demographics, account details, and payment history (e.g., gender, tenure, total charges, monthly charges, contract type).
+Target Variable: Churn (binary classification: churned vs. non-churned).
 
-Developed objective strategy for discovering optimal EEG bands based on signal power spectra using Python. This data-driven approach led to better characterization of the underlying power spectrum by identifying bands that outperformed the more commonly used band boundaries by a factor of two. The proposed method provides a fully automated and flexible approach to capturing key signal components and possibly discovering new indices of brain activity.
+2. Data Preprocessing
+Class Balancing: Addressed 26.6% churn rate imbalance using **SMOTE**.
+Feature Encoding: Converted binary and categorical features using label and**one-hot encoding**.
+Scaling: Min-Max Scaling applied to normalize skewed numerical data.
 
-EEG Band Discovery
+3. Exploratory Data Analysis (EDA)
+Insights:
+Higher monthly charges and shorter tenure correlate with increased churn.
+Non-churners are predominantly on two-year contracts with lower monthly charges.
+Churners commonly use electronic checks as their payment method.
+Visualizations: Correlation heatmaps, boxplots, and distribution charts highlighted key trends.
 
-Decoding Physical and Cognitive Impacts of Particulate Matter Concentrations at Ultra-Fine Scales
-Publication
+4. Model Implementation
+Baseline Models: Logistic Regression, Random Forest, SVM.
+Ensemble Models: AdaBoost, XGBoost, Extra Trees.
+Optimization: PCA preserved 95% variance; hyperparameter tuning improved model performance.
+![image](https://github.com/user-attachments/assets/b4ca4b13-5847-4307-a01c-bd285b51ffb0)
 
-Used Matlab to train over 100 machine learning models which estimated particulate matter concentrations based on a suite of over 300 biometric variables. We found biometric variables can be used to accurately estimate particulate matter concentrations at ultra-fine spatial scales with high fidelity (r2 = 0.91) and that smaller particles are better estimated than larger ones. Inferring environmental conditions solely from biometric measurements allows us to disentangle key interactions between the environment and the body.
+5. Model Validation and Tuning
+Cross-Validation: Repeated 10-fold CV achieved the most robust validation scores.
+Hyperparameter Tuning:
+Random Forest optimized with n_estimators=150, max_depth=50, and criterion='gini'.
+SVM fine-tuned with kernel=rbf, gamma=auto, and C=7.
+Logistic Regression optimized with solver=saga and C=1.0001.
 
-Bike Study
+Key Insights
+Feature Importance:
+Top predictors: Total Charges, Monthly Charges, Contract Type (month-to-month), Tenure, Online Security.
+Performance:
+Ensemble models outperformed baseline models, showcasing the importance of boosting techniques in handling complex datasets.
+
+Conclusion
+This project demonstrates the application of advanced machine learning techniques and model optimization strategies to solve a real-world business problem. The resulting models provide actionable insights for targeted customer retention efforts, enabling telecommunications firms to minimize churn and maximize customer lifetime value.
