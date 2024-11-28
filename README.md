@@ -209,15 +209,15 @@ Source: Kaggle dataset on credit card customer attrition.
 - Cluster 3: Gold card holders with high-value transactions.
 - Cluster 4: Balanced segment with moderate credit usage.
 
+**Existing Customer Cluster Profile**
+
+  ![image](https://github.com/user-attachments/assets/54f18faa-23fd-4faa-9476-8b165794ff4e)
+
 **Churned Customers**: Segmented into 3 clusters based on credit behavior and transaction patterns.
 - Cluster 1: Low transaction volume; low utilization ratio.
 - Cluster 2: Blue card holders with average utilization; less engagement.
 - Cluster 3: High credit limit and transaction counts; unexplored attrition reasons.
-
-**Existing Customer Cluster Profile**
-
-  ![image](https://github.com/user-attachments/assets/54f18faa-23fd-4faa-9476-8b165794ff4e)
-  
+ 
 **Attrited Customer Cluster Profile**
 
   ![image](https://github.com/user-attachments/assets/b903ee55-a070-4393-8beb-347685755a59)
