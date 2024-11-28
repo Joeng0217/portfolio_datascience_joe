@@ -1,8 +1,7 @@
 ##  **Prediction of Customer Churn Using Machine Learning and Ensemble Techniques**
-# Abstract
 This project aims to predict customer churn in the telecommunications industry using various machine learning models, including Logistic Regression, Random Forest, and Support Vector Machine, alongside ensemble methods like XGBoost, AdaBoost, and Extra Trees Classifier. Key data preprocessing techniques such as SMOTE for class balancing and Principal Component Analysis (PCA) for dimensionality reduction were utilized. The Random Forest model optimized with Randomized Search CV achieved the highest accuracy of 86.10%, followed closely by XGBoost at 85.84%. The insights derived from this analysis support proactive customer retention strategies.
 
-# Skills Demonstrated
+**Skills Demonstrated**
 - Machine Learning Models: Logistic Regression, Random Forest, Support Vector Machine (SVM), AdaBoost, XGBoost, Extra Trees Classifier.
 - Data Preprocessing: Feature engineering, handling missing values, label encoding, one-hot encoding, and class balancing with SMOTE.
 - Dimensionality Reduction: PCA with variance preservation (95%).
@@ -11,7 +10,7 @@ This project aims to predict customer churn in the telecommunications industry u
 - Evaluation Metrics: ROC-AUC, F1-score, precision, recall, and confusion matrices.
 - Programming Libraries: NumPy, Pandas, Scikit-learn, Seaborn, Matplotlib, Plotly, Imbalanced-learn.
 
-# Process Breakdown
+**Process Breakdown**
 **1. Dataset Overview**
 - Source: Kaggle’s Telco Customer Churn Dataset (7043 instances, 21 features). 
 - Features: Customer demographics, account details, and payment history (e.g., gender, tenure, total charges, monthly charges, contract type). 
