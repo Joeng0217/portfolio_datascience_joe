@@ -1,0 +1,813 @@
+proc surveyselect data=Ass2.hotel_uncleaned out=Ass2.hotelnew1 
+		method=srs /* Random Sampling */
+		samprate=0.2 seed=123;
+run;
+
+proc means data=ass2.hotelnew1 nmiss;
+run;
+
+proc freq data=Ass2.hotelnew1;
+	tables 'type of meal'n 'room type'n 'market segment type'n 
+		'booking status'n/missing;
+run;
+
+proc means data=Ass2.hotelnew1 n mean median std min max;
+run;
+
+proc univariate data=ass2.hotelnew1;
+	histogram/Normal;
+run;
+
+/* Another Method To Determine the outliers among the variables*/
+proc univariate data=ass2.hotelnew1;
+	var 'average price'n;
+	output out=outlier pctlpts=5 95 pctlpre=LO pctlname=pcntl mean=mean std=std;
+	histogram/ normal;
+run;
+
+/* select distinct values*/
+proc sql;
+	select count(distinct 'number of adults'n) as 'Number of adults'n, 
+		count(distinct 'number of children'n) as 'Number of children'n, 
+		count(distinct 'number of weekend nights'n) as 'Number of weekend nights'n, 
+		count(distinct 'number of week nights'n) as 'Number of week nights'n, 
+		count(distinct 'type of meal'n) as 'type of meal'n, count(distinct 
+		'car parking space'n) as 'car park space'n, count(distinct 'room type'n) as 
+		'room type'n, count(distinct 'market segment type'n) as 'market segment'n, 
+		count(distinct repeated) as 'repeat'n, count(distinct 'booking status'n) as 
+		'booking status'n from ass2.hotelnew1;
+quit;
+
+/*Cross-tabulation of numerical variable by booking status*/
+proc means data=ass2.hotelnew1 n mean std;
+	class 'booking status'n;
+	var 'lead time'n;
+run;
+
+proc means data=ass2.hotelnew1 n mean std;
+	class 'booking status'n;
+	var 'average price'n;
+run;
+
+/*find the outlier of price*/
+proc sgplot data=ass2.hotelnew1;
+	vbox 'average price'n;
+	title 'Box Plot of Average Price';
+run;
+
+/*find the outlier of lead time */
+proc sgplot data=ass2.hotelnew1;
+	vbox 'lead time'n;
+	title 'Box Plot of Lead Time';
+run;
+
+/*Cross-tabulation of categorical variable by booking status*/
+proc freq data=ass2.hotelnew1;
+	tables 'booking status'n *'number of weekend nights'n;
+run;
+
+proc freq data=ass2.hotelnew1;
+	tables 'booking status'n *'number of week nights'n;
+run;
+
+proc freq data=ass2.hotelnew1;
+	tables 'booking status'n *'number of adults'n;
+run;
+
+proc freq data=ass2.hotelnew1;
+	tables 'booking status'n *'special requests'n*'car parking space'n;
+run;
+
+/* See the relationship between categorical variables*/
+proc freq data=ass2.hotelnew1;
+	tables 'type of meal'n*'Booking status'n/chisquare;
+run;
+
+proc freq data=ass2.hotelnew1;
+	tables'Booking status'n*'P-C'n/chisquare;
+run;
+
+proc freq data=ass2.hotelnew1;
+	tables 'P-not-C'n*'booking status'n/chisquare;
+run;
+
+proc freq data=ass2.hotelnew1;
+	tables 'room type'n*'Booking status'n/chisquare;
+run;
+
+proc freq data=ass2.hotelnew1;
+	tables 'car parking space'n*'Booking status'n/chisquare;
+run;
+
+proc freq data=ass2.hotelnew1;
+	tables 'market segment type'n*'Booking status'n/chisquare;
+run;
+
+proc freq data=ass2.hotelnew1;
+	tables 'repeated'n*'Booking status'n/chisquare;
+run;
+
+/*Create boxplot of booking status and price*/
+proc sgplot data=Ass2.hotelnew1;
+	vbox 'average price'n / category='booking status'n;
+run;
+
+/* Generate the box plot for lead time based on booking status*/
+proc sgplot data=Ass2.hotelnew1;
+	vbox 'lead time'n / category='booking status'n;
+run;
+
+/* Generate the box plot of average price by room category*/
+proc sgplot data=Ass2.hotelnew1;
+	vbox 'average price'n / category='room type'n;
+run;
+
+/*Determine the relationship between booking status and other numerical variable'
+/*convert booking status into 0 &1*/
+data ass2.hotelnew1;
+	set ass2.hotelnew1;
+
+	if 'booking status'n='Canceled' then
+		booking_status_num=1;
+	else if 'booking status'n='Not_Canceled' then
+		booking_status_num=0;
+run;
+
+proc corr data=ass2.hotelnew1;
+	var booking_status_num 'number of adults'n 'number of children'n 
+		'number of weekend nights'n 'number of week nights'n 'average price'n 
+		'special requests'n 'lead time'n 'car parking space'n 'P-C'n 'P-not-C'n;
+run;
+
+/*Displaying bar chart*/
+/* barchart*/
+proc sgplot data=ass2.hotelnew1;
+	vbar 'car parking space'n / response='number of adults'n;
+run;
+
+proc sgplot data=ass2.hotelnew1;
+	vbar 'room type'n / response='number of adults'n;
+run;
+
+proc sgplot data=ass2.hotelnew1;
+	vbar 'market segment type'n / response='number of adults'n;
+run;
+
+proc sgplot data=ass2.hotelnew1;
+	vbar repeated / datalabel;
+	xaxis label='Repeated Guest';
+	yaxis label='Count';
+	title 'Frequency of Repeated Guests';
+run;
+
+proc sgplot data=ass2.hotelnew1;
+	vbar 'type of meal'n / response='number of adults'n;
+run;
+
+proc sgplot data=ass2.hotelnew1;
+	vbar 'booking status'n / response='Lead time'n stat=mean 
+		group='market segment type'n groupdisplay=cluster;
+	xaxis label='Booking Status';
+	yaxis label='Mean Lead Time';
+	keylegend / position=topright title='Market Segment Type';
+	title 'Mean of Lead time by Booking Status and Market Segment Type';
+run;
+
+proc sgplot data=ass2.hotelnew1;
+	vbar 'booking status'n / response='P-C'n stat=mean group='repeated'n 
+		groupdisplay=cluster;
+	xaxis label='Booking Status';
+	yaxis label='previosuly canceled';
+	keylegend / position=topright title='Repeated';
+	title 'Mean of Previously Canceled by Booking Status and Market Segment Type';
+run;
+
+/*Panel Plot*/
+proc sgpanel data=Ass2.hotelnew1;
+	panelby 'booking status'n;
+	vbar 'type of meal'n / response='average price'n stat=mean;
+run;
+
+proc sgpanel data=ass2.hotelnew1;
+	panelby 'booking status'n;
+	vbar 'room type'n / response='average price'n stat=mean;
+run;
+
+proc sgpanel data=Ass_1.hotelnew;
+	panelby 'booking status'n;
+	vbar 'market segment type'n / response='average price'n stat=mean;
+run;
+
+proc sgpanel data=Ass_1.hotelnew;
+	panelby 'booking status'n;
+	vbar repeated / response='average price'n stat=mean;
+run;
+
+/*Price variation based on booking status respect to market segment*/
+proc sgpanel data=ass2.hotelnew1;
+	panelby 'booking status'n / columns=2 spacing=10;
+	vbar 'market segment type'n / response='average price'n stat=mean 
+		dataskin=pressed;
+	colaxis label='Room Type';
+	rowaxis label='Average Price';
+run;
+
+/*Price variation based on market segment respect to room type*/
+proc sgpanel data=ass2.hotelnew1;
+	panelby 'booking status'n / columns=2 spacing=5;
+	vbar 'market segment type'n / response='average price'n stat=mean 
+		dataskin=pressed;
+	colaxis label='Customer Type';
+	rowaxis label='Average Price';
+run;
+
+/*Trend Analysis*/
+proc sort data=ass2.hotelnew1;
+	by 'date of reservation'n;
+run;
+
+/*Extract year, month, and day from the date of reservation*/
+/* Ensure date_of_reservation is in date format */
+data ass2.hotelnew1;
+	set ass2.hotelnew1;
+	format date_of_reservation date9.;
+
+	/* Extract year, month, and day */
+	year=year('date of reservation'n);
+	month=month('date of reservation'n);
+	day=day('date of reservation'n);
+run;
+
+/*Create a cross-tabulation of booking status by Date*/
+proc freq data=ass2.hotelnew1;
+	tables year*month*day*'booking status'n / noprint out=booking_status_freq;
+run;
+
+proc freq data=ass2.hotelnew1;
+	tables year*month*'booking status'n;
+run;
+
+/*Find the relationship between the variables - lead time and average price*/
+proc sgscatter data=ass2.hotelnew1;
+	plot 'average price'n * 'lead time'n/reg;
+run;
+
+proc reg data=Ass2.hotelnew1;
+	model 'average price'n='lead time'n;
+	run;
+
+/*Data Preprocessing*/ 	
+/* Replace the missing values by finding the mode of the variables */ 
+/* Step 1: Calculate frequency of market segment type using PROC FREQ */
+PROC FREQ DATA=Ass2.hotelnew1 NOPRINT;
+    TABLES 'market segment type'n / OUT=FreqTable (KEEP='market segment type'n Count);
+RUN;
+
+/* Step 2: Sort the frequency table by count in descending order to find the mode */
+PROC SORT DATA=FreqTable OUT=SortedFreqTable;
+    BY DESCENDING Count;
+RUN;
+
+
+/* Step 3: Create a macro variable for the mode value */
+DATA _NULL_;
+    SET SortedFreqTable;
+    IF _N_ = 1 THEN CALL SYMPUTX('ModeMarketSegmentType', 'market segment type'n);
+RUN;
+
+/* Step 4: Print the mode value to the log (for verification) */
+%PUT ModeMarketSegmentType: &ModeMarketSegmentType;
+
+/* Step 5: Replace missing values with the mode */
+DATA Ass2.hotelnew1;
+    SET Ass2.hotelnew1;
+    IF MISSING('market segment type'n) THEN 'market segment type'n = "&ModeMarketSegmentType";
+RUN;
+
+/* Step 6: Print the dataset to check if missing values are replaced */
+PROC PRINT DATA=Ass2.hotelnew1 ;
+    VAR 'market segment type'n;
+RUN;
+
+/* Step 8: Print the cleaned dataset to check the final output */
+PROC PRINT DATA=Ass2.hotelnew1 (OBS=10);
+    VAR 'market segment type'n;
+RUN;
+
+proc freq data=Ass2.hotelnew1;
+	tables 'type of meal'n 'room type'n 'market segment type'n 
+		'booking status'n/missing;
+run;
+
+/*type of meal*/ 
+/* Step 1: Calculate frequency of market segment type using PROC FREQ */
+PROC FREQ DATA=Ass2.hotelnew1 NOPRINT;
+    TABLES 'type of meal'n / OUT=FreqTable1 (KEEP='type of meal'n Count);
+RUN;
+
+/* Step 2: Sort the frequency table by count in descending order to find the mode */
+PROC SORT DATA=FreqTable1 OUT=SortedFreqTable1;
+    BY DESCENDING Count;
+RUN;
+
+/* Step 3: Create a macro variable for the mode value */
+DATA _NULL_;
+    SET SortedFreqTable1;
+    IF _N_ = 1 THEN CALL SYMPUTX('ModeMeal', 'type of meal'n);
+RUN;
+
+/* Step 4: Print the mode value to the log (for verification) */
+%PUT ModeMeal: &ModeMeal;
+
+/* Step 5: Replace missing values with the mode */
+DATA Ass2.hotelnew1;
+    SET Ass2.hotelnew1;
+    IF MISSING('type of meal'n) THEN 'type of meal'n = "&ModeMeal";
+RUN;
+
+/* Step 6: Print the dataset to check if missing values are replaced */
+PROC PRINT DATA=Ass2.hotelnew1 (OBS=10);
+    VAR 'type of meal'n;
+RUN;
+
+proc freq data=Ass2.hotelnew1;
+	tables 'type of meal'n 'room type'n 'market segment type'n 
+		'booking status'n/missing;
+run;
+
+/*Replace Missing value of room type*/ 
+/* Step 1: Calculate frequency of market segment type using PROC FREQ */
+PROC FREQ DATA=Ass2.hotelnew1 NOPRINT;
+    TABLES 'room type'n / OUT=FreqTable2 (KEEP='room type'n Count);
+RUN;
+
+/* Step 2: Sort the frequency table by count in descending order to find the mode */
+PROC SORT DATA=FreqTable2 OUT=SortedFreqTable2;
+    BY DESCENDING Count;
+RUN;
+
+/* Step 3: Create a macro variable for the mode value */
+DATA _NULL_;
+    SET SortedFreqTable2;
+    IF _N_ = 1 THEN CALL SYMPUTX('ModeRoom', 'room type'n);
+RUN;
+
+/* Step 4: Print the mode value to the log (for verification) */
+%PUT ModeRoom: &ModeRoom;
+
+/* Step 5: Replace missing values with the mode */
+DATA Ass2.hotelnew1;
+    SET Ass2.hotelnew1;
+    IF MISSING('room type'n) THEN 'room type'n = "&ModeRoom";
+RUN;
+
+/* Step 6: Print the dataset to check if missing values are replaced */
+PROC PRINT DATA=Ass2.hotelnew1 (OBS=10);
+    VAR 'room type'n;
+RUN;
+
+proc freq data=Ass2.hotelnew1;
+	tables 'type of meal'n 'room type'n 'market segment type'n 
+		'booking status'n/missing;
+run;
+
+/*Clean the outliers before performing EDA & encoding*/
+/*Remove outliers of average price */
+proc univariate data=ass2.hotelnew1 noprint;
+    var 'average price'n;
+    output out=stats_price pctlpts=25 75 pctlpre=Q_price;
+run;
+  
+/* Step 3: Define upper bound for average price */
+data _null_;
+    set stats_price;
+    call symputx('price_lower_bound', Q_price25 - 1.5 * (Q_price75 - Q_price25));
+    call symputx('price_upper_bound', Q_price75 + 1.5 * (Q_price75 - Q_price25));
+run;
+ 
+ 
+/* Step 5: Handle outliers in average price variables */
+/* Remove outliers in average price variables */
+data ass2.hotelnew3;
+    set ass2.hotelnew1;
+    /* Filter out both lower and upper boundary outliers in average price */
+    if 'average price'n < &price_lower_bound then 'average price'n = &price_lower_bound; 
+    if 'average price'n > &price_upper_bound then 'average price'n = &price_upper_bound;
+run;
+ 
+proc sgplot data=ass2.hotelnew3;
+   title 'Boxplot of Price (No Outliers)';
+   vbox 'average price'n;
+run;
+
+/*Remove outliers of average price */
+proc univariate data=ass2.hotelnew1 noprint;
+    var 'average price'n;
+    output out=stats_price pctlpts=25 75 pctlpre=Q_price;
+run;
+  
+/* Step 3: Define upper bound for average price */
+data _null_;
+    set stats_price;
+    call symputx('price_lower_bound', Q_price25 - 1.5 * (Q_price75 - Q_price25));
+    call symputx('price_upper_bound', Q_price75 + 1.5 * (Q_price75 - Q_price25));
+run;
+ 
+ 
+/* Step 5: Handle outliers in average price variables */
+/* Remove outliers in average price variables */
+data ass2.hotelnew3;
+    set ass2.hotelnew1;
+    /* Filter out both lower and upper boundary outliers in average price */
+    if 'average price'n < &price_lower_bound then 'average price'n = &price_lower_bound; 
+    if 'average price'n > &price_upper_bound then 'average price'n = &price_upper_bound;
+run;
+ 
+proc sgplot data=ass2.hotelnew3;
+   title 'Boxplot of Price (No Outliers)';
+   vbox 'average price'n;
+run;
+
+
+/*Perform EDA */
+
+/*Visualize the relationship between price and car parking space*/ 
+proc sgplot data=ass2.hotelnew3
+    vbox 'average price'n / category='car parking space'n;
+    xaxis label="Car Parking Space ";
+    yaxis label="Average Price";
+    title "Average Price by Special Requests";
+run; /*Price increases with parking space*/ 
+
+/*Test to evaluate relationship between lead time and booking status*/
+/* Calculate ANOVA */
+proc glm data=ass2.hotelnew3
+    class "booking status"n;
+    model "lead time"n = "booking status"n;
+    title "ANOVA: Lead Time by Booking Status";
+run; /*PROC GLM: Performs an analysis of variance (ANOVA).
+data=Ass_1.hotelnew: Specifies the dataset.
+class "booking status"n: Defines the categorical variable booking status (with spaces, enclosed in double quotes and followed by n to indicate a name literal).
+model "lead time"n = "booking status"n: Specifies that lead time is the dependent variable and booking status is the independent variable.
+title: Provides a title for the output. 
+There is a correlation p-value <0.001*/
+
+/*Pr > F: <.0001 (This is the p-value associated with the F-test. A very small p-value indicates strong evidence against the null hypothesis).
+Model Fit Statistics:
+R-Square: 0.154770 (This indicates that approximately 15.48% of the variance in lead time is explained by booking status).
+Coeff Var: 309.0530 (Coefficient of variation, showing the ratio of the standard deviation to the mean).
+Root MSE: 123.4351 (Root Mean Square Error, a measure of the standard deviation of the residuals).
+lead time Mean: 39.93978 (The overall mean of the lead time).
+
+Significance: The p-value (<.0001) is very small, indicating that the differences in mean lead times between different booking statuses are statistically significant. This means that booking status has a significant effect on lead time.
+R-Square: The R-square value of 0.154770 suggests that booking status explains about 15.48% of the variability in lead times. While this is a moderate amount, it indicates that there are other factors not included in the model that also affect lead time.
+F Value: The high F value (1328.46) indicates that the model is a good fit for the data compared to the model with no predictors.
+Conclusion:*/ 
+
+/*Anova test to determine the relationship between avearge price and booking status*/ 
+proc glm data=ass2.hotelnew4;
+    class 'booking status'n;
+    model 'average price'n = 'booking status'n;
+    title "ANOVA: Average Price by Booking Status";
+run; /*there is a relationship , reject null hypothesis , p<0.001*/
+
+/*Anova of different room type*/
+proc anova data=ass2.hotelnew4;
+    class 'room type'n;
+    model 'average price'n = 'room type'n;
+    means 'room type'n / tukey;
+run;
+
+/* ANOVA for 'average price' across different 'meal plans' */
+proc anova data=ass2.hotelnew4;
+    class 'type of meal'n;
+    model 'average price'n = 'type of meal'n;
+    means 'type of meal'n / tukey;
+run;
+
+/* ANOVA for 'average price' for online vs. offline bookings */
+proc anova data=ass2.hotelnew5;
+    class booking_status_binary;
+    model "average price"n= booking_status_binary;
+    means booking_status_binary / tukey;
+run;
+
+
+/*Binning */
+/* Binning average_price */
+data ass2.hotelnew4;
+    set ass2.hotelnew3;
+    if 'average price'n >= 100 then 'price category'n = 'High';
+    else 'price category'n = 'Low';
+run; 
+
+/*Cross-tabulation of booking status by category*/
+proc freq data=ass2.hotelnew4
+table 'booking status'n*'price category'n / nocum nopercent;
+    title "Frequency of booking status by category";
+run;
+
+proc means data=ass2.hotelnew4(where=('booking status'n in ('Canceled'))) mean;
+class 'booking status'n;
+var 'number of adults'n 'number of children'n 'number of weekend nights'n 'lead time'n 'average price'n 'number of week nights'n 'number of weekend nights'n 'special requests'n;
+run; 
+
+proc means data=ass2.hotelnew4(where=('booking status'n in ('Not_Canceled')))mean;
+class 'booking status'n;
+var 'number of adults'n 'number of children'n 'number of weekend nights'n 'lead time'n 'average price'n 'number of week nights'n 'number of weekend nights'n 'special requests'n;
+run; 
+
+proc freq data=ass2.hotelnew4;
+    tables 'type of meal'n 'car parking space'n 'room type 'n 'market segment type'n
+           'repeated'n 'booking status'n / plots=all; 
+run;
+
+/* Perform standardization of lead time */ 
+proc standard data=ass2.hotelnew4 out=ass2.hotelnew5 mean=0 std=1;
+    var 'lead time'n 'P-C'n 'P-not-C'n 'average price'n 'number of week nights'n;
+run;
+
+proc means data=ass2.hotelnew5 mean std min max; 
+    var 'lead time'n 'P-C'n 'P-not-C'n 'average price'n 'number of week nights'n;
+run;
+
+/* Move on top*/ 
+/*Feature Engineering of Number of Nights*/
+data ass2.hotelnew4;
+    set ass2.hotelnew4; 
+    'total nights'n = 'number of weekend nights'n + 'number of week nights'n ;
+run;
+
+/* number of customers*/
+data ass2.hotelnew4;
+    set ass2.hotelnew4; 
+    'total customers'n = 'number of children'n + 'number of adults'n ;
+run;
+
+ /* Binary encoding for booking status */
+    if 'booking status'n = 'Not_Canceled' then booking_status_binary = 1;
+    else booking_status_binary = 0;
+run;
+
+/*Creating variable total customers*/
+data ass2.hotelnew5;
+    set ass2.hotelnew4; 
+    'total nights'n = 'number of weekend nights'n + 'number of week nights'n ;
+run;
+
+/* Filter data for the month of October */
+data ass2.hotel_Oct;
+    set ass2.hotelnew5;
+    if month = 10;
+run;
+
+/* Descriptive statistics for October data */
+proc sql;
+    select sum("total customers"n) as total_customers_october,
+           sum("total nights"n) as total_nights_october
+    from ass2.hotel_Oct;
+quit;
+
+/* Frequency analysis for market segment */
+proc freq data=ass2.hotel_Oct;
+    tables "market segment type"n;
+run;
+
+/* Create a vertical bar chart for Average Price by Market Segment in October */
+proc sgplot data=ass2.hotel_Oct;
+    vbar "market segment type"n / response="average price"n stat=mean;
+    title 'Average Price by Market Segment in October';
+run;
+
+/* Analyze the data to identify patterns */
+proc sgplot data=ass2.hotel_Oct;
+    histogram "average price"n;
+    title 'Distribution of Average Price in October';
+run;
+
+proc sgplot data=ass2.hotel_Oct;
+    vbox "total nights"n / category="market segment type"n;
+    title 'Total Nights by Market Segment in October';
+run;
+
+/* Create a summary table to count repeated customers by market segment */
+proc sql;
+    create table repeated_summary as
+    select "market segment type"n, 
+           sum(repeated) as repeated_count,
+           count(*) as total_count,
+           calculated repeated_count / calculated total_count as repeated_proportion
+    from ass2.hotel_Oct
+    group by "market segment type"n;
+quit;
+
+/*Calculate the Proportion or Count of Repeated Customers: Aggregate the data to 
+get the count or proportion of repeated customers by market segment.*/
+
+/* Create a bar chart for the proportion of repeated customers by market segment */
+proc sgplot data=repeated_summary;
+    vbar "market segment type"n / response=repeated_proportion datalabel;
+    title 'Proportion of Repeated Customers by Market Segment in October';
+    yaxis label='Proportion of Repeated Customers';
+run;
+
+/* Further analysis to identify why October has high demand */
+proc means data=ass2.hotel_Oct n mean std min max;
+    class "market segment type"n;
+    var "average price"n "total nights"n 'total customers'n;
+run;
+
+/* Compare October with other months */
+data other_months_data;
+    set ass2.hotelnew5;
+    if month ne 10;
+run;
+
+/* Calculate cancellation rates for repeat and first-time customers */
+data ass2.hotelnew5;
+    set ass2.hotelnew5;
+if 'booking status'n = 'Not_Canceled' then booking_status_binary = 0;
+    else booking_status_binary = 1;
+run;
+
+proc sql;
+    create table cancellation_rates as
+    select repeated, 
+           sum(case when booking_status_binary = 1 then 1 else 0 end) as cancellations,
+           count(*) as total_bookings,
+           calculated cancellations / calculated total_bookings as cancellation_rate
+    from ass2.hotelnew5
+    group by repeated;
+quit;
+
+/* Calculate cancellation rates for repeat and first-time customers in Oct */
+data ass2.hotel_Oct;
+    set ass2.hotel_Oct;
+if 'booking status'n = 'Not_Canceled' then booking_status_binary = 0;
+    else booking_status_binary = 1;
+run;
+
+proc sql;
+    create table cancellation_rates as
+    select repeated, 
+           sum(case when booking_status_binary = 1 then 1 else 0 end) as cancellations,
+           count(*) as total_bookings,
+           calculated cancellations / calculated total_bookings *100 as cancellation_rate
+    from ass2.hotel_Oct
+    group by repeated;
+quit;
+
+/*Compare with October */
+/* Summary statistics for other months */
+proc means data=other_months_data n mean std min max;
+    var "average price"n "total nights"n  "total customers"n;
+run;
+
+/* Frequency analysis for market segment in other months */
+proc freq data=other_months_data;
+    tables "market segment type"n;
+run;
+
+/*feature Engineering*/
+/* Create new feature: Average Price per Night */
+data ass2.hotelnew5;
+    set ass2.hotelnew5;
+    avg_price_per_night = "average price"n /"total nights"n;
+run;
+
+/* Sort the dataset by date of reservation */
+proc sort data=ass2.hotelnew5;
+    by "date of reservation"n;
+run;
+
+/* Time Series Analysis: Booking Trends Over Time */
+proc timeseries data=ass2.hotelnew5 out=ts_output;
+    id "date of reservation"n interval=month accumulate=total;
+    var "lead time"n "average price"n;
+run;
+
+/* Plot Time Series */
+proc sgplot data=ts_output;
+    series x="date of reservation"n y='average price'n / markers;
+    title "Average Price Over Time";
+run;
+
+proc sgplot data=ts_output;
+    series x="date of reservation"n y="lead time"n / markers;
+    title "Lead Time Over Time";
+run;
+
+/* Calculate Correlation between Lead Time and Average Price */
+proc corr data=ts_output;
+    var "lead time"n "average price"n;
+run;
+
+/* Simple Linear Regression Analysis */
+proc reg data=ts_output;
+    model "average price"n = 'lead time'n;
+    title "Regression Analysis of Average Price on Lead Time";
+run;
+
+/* Calculate correlation matrix */
+proc corr data=ass2.hotelnew5;
+    var "lead time"n "average price"n 'total nights'n 'total customers'n booking_status_binary 'P-C'n 
+    'P-not-C'n 'special requests'n 'car parking space'n;
+run;
+
+/* Create a stacked bar chart showing the distribution of current booking statuses within P-C categories */
+proc sgplot data=ass2.hotelnew5;
+    vbar "P-C"n / group=booking_status_binary groupdisplay=stack datalabel;
+    title "Distribution of Current Booking Statuses for Previously Canceled and Not Canceled Bookings";
+    xaxis label="Previously Canceled (P-C)";
+    yaxis label="Count";
+    keylegend / location=inside position=topright across=1;
+run;
+
+/* Create a box plot to compare distributions of lead times within categories of P-C and booking_status_binary */
+proc sgplot data=ass2.hotelnew5;
+    vbox "lead time"n / category="P-C"n group=booking_status_binary;
+    title "Lead Time Distribution for Previously Canceled vs. Current Booking Status";
+    xaxis label="Previously Canceled (P-C)";
+    yaxis label="Lead Time";
+    keylegend / location=inside position=topright across=1;
+run;
+
+/*Freqency table of aerage price (new)*/ 
+proc means data=ass2.hotelnew5 n mean std;
+	class 'booking status'n;
+	var 'average price'n;
+run;
+
+/* Create a box plot to compare distributions of average prices within categories of P-C and booking_status_binary */
+proc sgplot data=ass2.hotelnew5;
+    vbox "average price"n / category="P-C"n group=booking_status_binary;
+    title "Average Price Distribution for Previously Canceled vs. Current Booking Status";
+    xaxis label="Previously Canceled (P-C)";
+    yaxis label="Average Price";
+    keylegend / location=inside position=topright across=1;
+run;
+
+proc sgplot data=Ass2.hotelnew5;
+	vbox 'average price'n / category='booking status'n;
+run;
+
+proc sgplot data=ass2.hotelnew5;
+vbox 'average price'n / category = 'room type'n;
+run; 
+
+/*Panel Plot*/
+
+proc sgpanel data=ass2.hotelnew5;
+	panelby 'booking status'n;
+	vbar 'room type'n / response='average price'n stat=mean;
+run;
+
+proc sgpanel data=Ass_1.hotelnew5;
+	panelby 'booking status'n;
+	vbar repeated / response='average price'n stat=mean;
+run;
+
+/*Price variation based on booking status respect to market segment*/
+proc sgpanel data=ass2.hotelnew5;
+	panelby 'booking status'n / columns=2 spacing=10;
+	vbar 'market segment type'n / response='average price'n stat=mean 
+		dataskin=pressed;
+	colaxis label='Customer Type';
+	rowaxis label='Average Price';
+run;
+
+/* Hypothesis testing */ 
+/* T-test for Lead Time */
+proc ttest data=ass2.hotelnew4;
+    class 'booking status'n;
+    var 'lead time'n;
+run;
+
+/* Hypothesis testing */
+/* T-test for Average Price*/
+proc ttest data=ass2.hotelnew4;
+    class 'booking status'n;
+    var 'average price'n;
+run;
+
+/*On-hot Encoding*/ 
+/* Use Proc Sql to perform one-hot encoding */
+proc sql;
+create table encoded_data As 
+	Select *,
+		Case 
+			When Product = 'ProductA' Then 1
+			Else 0
+		End as ProductA,
+		Case 
+			When Product = 'ProductB' Then 1
+			Else 0
+		End as ProductB,
+		Case 
+			When Product = 'ProductC' Then 1
+			Else 0
+		End As ProductC
+	From mydata;
+Quit;
+
+
