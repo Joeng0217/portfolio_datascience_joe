@@ -96,37 +96,23 @@ This project investigates the factors influencing hotel reservation cancellation
 - Numerical: Lead time, average price, number of nights, and special requests.
 - Target Variable: Booking status (canceled or not canceled).
 
-![image](https://github.com/user-attachments/assets/b20fa547-af8b-418d-abab-9eb35ee342f8)
-
-
 **Process Breakdown**
 
 **1. Data Preprocessing**
 - Handling Missing Values
 
-![image](https://github.com/user-attachments/assets/91d83c20-275b-4b40-a893-fb4674b1b0ea)
-
 - Replaced categorical missing values with the mode (e.g., "Online" for market segment).
 
-![image](https://github.com/user-attachments/assets/8b4ede7e-579f-4523-a6c7-aad58a7793eb)
-
-![image](https://github.com/user-attachments/assets/02a7c811-800a-4856-9c17-d3b5572292cd)
-
 - Removed rows with missing reservation dates due to their minimal impact (<0.02%).
-
-![image](https://github.com/user-attachments/assets/c15a74be-44bc-4329-9c93-34bcf6d12964)
  
 **Outlier Treatment:**
 - Identified and removed outliers in numerical variables like average price using IQR thresholds.
 
-![image](https://github.com/user-attachments/assets/ca0b3296-1211-4d67-acda-910a5d6854f0)
 
 **Feature Engineering:**
 - Feature Creation & One-hot Encoding
 
 ![image](https://github.com/user-attachments/assets/0e64d185-dba7-4d4a-a919-6953cbf90d34)
-
-![image](https://github.com/user-attachments/assets/00d74dab-3ebb-46bc-9829-fd94b57644dc)
 
 ![image](https://github.com/user-attachments/assets/d1e9b421-b22a-423c-bdbf-9ebef7178f83)
 
@@ -158,19 +144,9 @@ This project investigates the factors influencing hotel reservation cancellation
 **Statistical Analysis**
 - **T-Test**: Lead times for canceled bookings were significantly longer than non-canceled bookings (mean 137.5 days vs. 59.05 days, p < 0.0001).
 
-![image](https://github.com/user-attachments/assets/a809ed74-84b0-4d88-be16-b9ad7c61150c)
-
-![image](https://github.com/user-attachments/assets/28316242-99e5-4337-b755-ebf28e000e90)
-
 - **ANOVA**: Higher room prices and certain room types were significantly associated with cancellations (p < 0.0001). Booking status explained 2.11% of price variability.
 
-![image](https://github.com/user-attachments/assets/d4d45cdc-1028-4ed6-8cb7-818adc12402c)
-
-![image](https://github.com/user-attachments/assets/c2bb9657-0f51-4f64-8ba6-7d61504f1582)
-
 - **Correlation**: Moderate positive correlation between lead time and cancellations (R = 0.43). Weak correlation between special requests and booking status.
-
-![image](https://github.com/user-attachments/assets/659163d4-6eb5-4807-afd2-407479ae2e8e)
 
 **Key Findings**
 - Lead Time: Bookings with longer lead times (>100 days) were more likely to be canceled.
@@ -191,7 +167,6 @@ This project highlights critical factors influencing hotel reservation cancellat
 
 **Abstract**
 This project explores customer segmentation to address churn and retention in the banking industry, using clustering and decision tree models implemented in SAS Enterprise Miner. By analyzing a Kaggle dataset with 22 features and 10,127 rows, the study identifies distinct customer profiles among existing and churned customers. The findings enable targeted retention strategies, emphasizing customer engagement and personalized incentives to reduce attrition and enhance profitability.
-![image](https://github.com/user-attachments/assets/9c2368b3-1633-4731-9a9f-568cc31c2917)
 
 **Dataset Overview**
 Source: Kaggle dataset on credit card customer attrition.
@@ -208,13 +183,13 @@ Source: Kaggle dataset on credit card customer attrition.
 **Skills Demonstrated**
 - SAS Enterprise Miner (Pipeline)
   
-![image](https://github.com/user-attachments/assets/c94a94a2-3931-42e8-bcad-70602edc4ff6)
+  ![image](https://github.com/user-attachments/assets/c94a94a2-3931-42e8-bcad-70602edc4ff6)
 
 - Data Cleaning & Preprocessing: Handled skewed data, standardized variables, and applied dummy encoding to categorical variables for clustering.
   
-![image](https://github.com/user-attachments/assets/fc06cffc-d875-4810-8fb1-6e8deef351ec)
+  ![image](https://github.com/user-attachments/assets/fc06cffc-d875-4810-8fb1-6e8deef351ec)
 
-![image](https://github.com/user-attachments/assets/93d34ad1-7a25-4c62-b677-725947fecf81)
+  ![image](https://github.com/user-attachments/assets/93d34ad1-7a25-4c62-b677-725947fecf81)
 
 
 **Exploratory Data Analysis (EDA):**
