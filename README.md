@@ -48,6 +48,7 @@ Insights:
 - Ensemble Models: AdaBoost, XGBoost, Extra Trees.
 - Optimization: PCA preserved 95% variance; hyperparameter tuning improved model performance.
 ![image](https://github.com/user-attachments/assets/b4ca4b13-5847-4307-a01c-bd285b51ffb0)
+![image](https://github.com/user-attachments/assets/3030b68d-2bc8-43d6-8672-2fa8000a575f)
 
 
 **5. Model Validation and Tuning**
@@ -89,44 +90,73 @@ This project investigates the factors influencing hotel reservation cancellation
 **Dataset Overview**
 - Source: Kaggle’s Hotel Booking Demand Dataset.
 - Size: 36,285 records with 17 attributes.
+![image](https://github.com/user-attachments/assets/e9c43391-05ad-4266-9f02-f84b54fb664c)
 
 **Features:**
 - Categorical: Booking status, room type, market segment, meal type.
 - Numerical: Lead time, average price, number of nights, and special requests.
 - Target Variable: Booking status (canceled or not canceled).
 
+![image](https://github.com/user-attachments/assets/b20fa547-af8b-418d-abab-9eb35ee342f8)
+
+
 **Process Breakdown**
 
 **1. Data Preprocessing**
-- Handling Missing Values:
+- Handling Missing Values
+![image](https://github.com/user-attachments/assets/91d83c20-275b-4b40-a893-fb4674b1b0ea)
+
 - Replaced categorical missing values with the mode (e.g., "Online" for market segment).
+![image](https://github.com/user-attachments/assets/8b4ede7e-579f-4523-a6c7-aad58a7793eb)
+![image](https://github.com/user-attachments/assets/02a7c811-800a-4856-9c17-d3b5572292cd)
+
 - Removed rows with missing reservation dates due to their minimal impact (<0.02%).
-- 
+![image](https://github.com/user-attachments/assets/c15a74be-44bc-4329-9c93-34bcf6d12964)
+ 
 **Outlier Treatment:**
 - Identified and removed outliers in numerical variables like average price using IQR thresholds.
+![image](https://github.com/user-attachments/assets/ca0b3296-1211-4d67-acda-910a5d6854f0)
 
 **Feature Engineering:**
-- Created Exploratory Data Analysis (EDA)
-  
-**Key Insights:**
+- Feature Creation & One-hot Encoding
+![image](https://github.com/user-attachments/assets/0e64d185-dba7-4d4a-a919-6953cbf90d34)
+![image](https://github.com/user-attachments/assets/00d74dab-3ebb-46bc-9829-fd94b57644dc)
+![image](https://github.com/user-attachments/assets/d1e9b421-b22a-423c-bdbf-9ebef7178f83)
 
-- Most bookings involved 2 adults and lasted 2-3 nights.
-- Lead Time: Canceled bookings had a mean lead time of 137 days, while non-canceled bookings averaged 59 days.
-- Average Price: Higher-priced bookings (> $100/day) had a significantly higher cancellation rate (40% vs. 24.5% for lower prices).
-- Market Segment: Online bookings showed the highest cancellation rate (37.56%), while offline and complementary bookings had lower rates.
 
 **Visualization:**
-
 - Boxplots and histograms revealed that canceled bookings were skewed toward higher lead times and prices.
 - Bar charts highlighted cancellation trends across price categories and market segments. new variables such as:
   a. Total Nights: Sum of weekend and weekday nights.
   b. Total Customers: Sum of adults and children per booking.
   c. ADR (Average Daily Rate): Average price divided by total nights.
+  
+**Key Insights:**
+- Most bookings involved 2 adults and lasted 2-3 nights.
+- Lead Time: Canceled bookings had a mean lead time of 137 days, while non-canceled bookings averaged 59 days.
+- Average Price: Higher-priced bookings (> $100/day) had a significantly higher cancellation rate (40% vs. 24.5% for lower prices).
+- Market Segment: Online bookings showed the highest cancellation rate (37.56%), while offline and complementary bookings had lower rates.
+
+**Examples of EDA:**
+![image](https://github.com/user-attachments/assets/a593d3d5-3140-44d7-a1da-f2d6f13cbfdc)
+![image](https://github.com/user-attachments/assets/b5dafaf9-3982-4a8d-8b9a-7ed2fe2cd124)
+![image](https://github.com/user-attachments/assets/c1a316b1-cafc-4690-b55f-edc9babcc9e7)
+![image](https://github.com/user-attachments/assets/d029a297-ddc8-498d-a91f-a61488fe33c9)
+![image](https://github.com/user-attachments/assets/c1c73d2f-89a3-480b-a443-d0bcaae13f2d)
+![image](https://github.com/user-attachments/assets/8a59f76d-3da4-4314-9c44-4db057934c5e)
 
 **Statistical Analysis**
 - T-Test: Lead times for canceled bookings were significantly longer than non-canceled bookings (mean 137.5 days vs. 59.05 days, p < 0.0001).
+![image](https://github.com/user-attachments/assets/a809ed74-84b0-4d88-be16-b9ad7c61150c)
+![image](https://github.com/user-attachments/assets/28316242-99e5-4337-b755-ebf28e000e90)
+
 - ANOVA: Higher room prices and certain room types were significantly associated with cancellations (p < 0.0001). Booking status explained 2.11% of price variability.
+![image](https://github.com/user-attachments/assets/d4d45cdc-1028-4ed6-8cb7-818adc12402c)
+![image](https://github.com/user-attachments/assets/c2bb9657-0f51-4f64-8ba6-7d61504f1582)
+
 - Correlation: Moderate positive correlation between lead time and cancellations (R = 0.43). Weak correlation between special requests and booking status.
+![image](https://github.com/user-attachments/assets/070acf74-8ca4-437f-b45e-16a8c2fe23c0)
+![image](https://github.com/user-attachments/assets/659163d4-6eb5-4807-afd2-407479ae2e8e)
 
 **Key Findings**
 - Lead Time: Bookings with longer lead times (>100 days) were more likely to be canceled.
