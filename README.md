@@ -16,8 +16,11 @@ Programming Libraries: NumPy, Pandas, Scikit-learn, Seaborn, Matplotlib, Plotly,
 Source: Kaggle’s Telco Customer Churn Dataset (7043 instances, 21 features). Features: Customer demographics, account details, and payment history (e.g., gender, tenure, total charges, monthly charges, contract type). Target Variable: Churn (binary classification: churned vs. non-churned).
 
 2. Data Preprocessing
+
 Class Balancing: Addressed 26.6% churn rate imbalance using **SMOTE**.
+
 Feature Encoding: Converted binary and categorical features using label and **one-hot encoding**.
+
 Scaling: Min-Max Scaling applied to normalize skewed numerical data.
 
 3. Exploratory Data Analysis (EDA)
