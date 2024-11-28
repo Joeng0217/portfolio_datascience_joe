@@ -152,26 +152,24 @@ This project investigates the factors influencing hotel reservation cancellation
 
 ![image](https://github.com/user-attachments/assets/d029a297-ddc8-498d-a91f-a61488fe33c9)
 
-![image](https://github.com/user-attachments/assets/c1c73d2f-89a3-480b-a443-d0bcaae13f2d)
+![image](https://github.com/user-attachments/assets/070acf74-8ca4-437f-b45e-16a8c2fe23c0)
 
 ![image](https://github.com/user-attachments/assets/8a59f76d-3da4-4314-9c44-4db057934c5e)
 
 **Statistical Analysis**
-- T-Test: Lead times for canceled bookings were significantly longer than non-canceled bookings (mean 137.5 days vs. 59.05 days, p < 0.0001).
+- **T-Test**: Lead times for canceled bookings were significantly longer than non-canceled bookings (mean 137.5 days vs. 59.05 days, p < 0.0001).
 
 ![image](https://github.com/user-attachments/assets/a809ed74-84b0-4d88-be16-b9ad7c61150c)
 
 ![image](https://github.com/user-attachments/assets/28316242-99e5-4337-b755-ebf28e000e90)
 
-- ANOVA: Higher room prices and certain room types were significantly associated with cancellations (p < 0.0001). Booking status explained 2.11% of price variability.
+- **ANOVA**: Higher room prices and certain room types were significantly associated with cancellations (p < 0.0001). Booking status explained 2.11% of price variability.
 
 ![image](https://github.com/user-attachments/assets/d4d45cdc-1028-4ed6-8cb7-818adc12402c)
 
 ![image](https://github.com/user-attachments/assets/c2bb9657-0f51-4f64-8ba6-7d61504f1582)
 
-- Correlation: Moderate positive correlation between lead time and cancellations (R = 0.43). Weak correlation between special requests and booking status.
-
-![image](https://github.com/user-attachments/assets/070acf74-8ca4-437f-b45e-16a8c2fe23c0)
+- **Correlation**: Moderate positive correlation between lead time and cancellations (R = 0.43). Weak correlation between special requests and booking status.
 
 ![image](https://github.com/user-attachments/assets/659163d4-6eb5-4807-afd2-407479ae2e8e)
 
@@ -249,8 +247,6 @@ Source: Kaggle dataset on credit card customer attrition.
 - Cluster 3: High credit limit and transaction counts; unexplored attrition reasons.
 
 **Existing Customer Cluster Profile**
-
-  ![image](https://github.com/user-attachments/assets/5dfd705d-185b-4f2e-8f0e-b574f9efba3b)
   
   ![image](https://github.com/user-attachments/assets/4f97edc4-fa61-418f-b68c-664f7b888afd)
   
@@ -260,9 +256,9 @@ Source: Kaggle dataset on credit card customer attrition.
 
 **Attrited Customer Cluster Profile**
 
-![image](https://github.com/user-attachments/assets/b903ee55-a070-4393-8beb-347685755a59)
+  ![image](https://github.com/user-attachments/assets/b903ee55-a070-4393-8beb-347685755a59)
 
-![image](https://github.com/user-attachments/assets/b6896538-77b3-4090-88f3-edd1ffa1e3f6)
+  ![image](https://github.com/user-attachments/assets/b6896538-77b3-4090-88f3-edd1ffa1e3f6)
   
 **3. Model Validation**
 - Used a hybrid clustering and decision tree model to validate cluster assignments.
