@@ -224,20 +224,19 @@ The superstore sought to:
 - Total customers increased by 8.6% YoY, with top customers generating 11K-14K in sales and $4K-$6K in profit.
 - Highlighted the top 10 most profitable customers and their purchasing trends.
 - Suggested customer retention strategies, such as loyalty programs and personalized promotions.
-  ![image](https://github.com/user-attachments/assets/9b21baa2-fddc-4642-b84d-19d4bc22aa43)
+ ![image](https://github.com/user-attachments/assets/5e028ea3-3750-409a-9f3c-e27c1924ef91)
 
-  
 **3. Regional Sales Dashboard**
 - Mapped sales and profits by region:
 - The West region accounted for 47% of total profit, while the Central region had the lowest contribution (8%).
 - Used bump charts to track regional performance over time and scatter plots to show subcategory-level performance.
-![image](https://github.com/user-attachments/assets/b60e2a88-d7b3-4651-8670-4c9a86edf8ab)
-  
+![image](https://github.com/user-attachments/assets/bcb569f6-8dbe-492f-959f-8907d418f0b0)
+ 
 **4. Segment Dashboard**
 - Segmented sales by Consumer, Corporate, and Home Office categories:
 - Consumers drove the majority of sales ($391K), followed by Corporate ($229K) and Home Office ($122K).
 - Identified technology items like "Copiers" and "Phones" as key drivers of profitability across all segments.
-![image](https://github.com/user-attachments/assets/7ed8b3f8-de3e-4cbe-b17d-46a9eedec581)
+![image](https://github.com/user-attachments/assets/93ec4d03-88f2-438d-8036-b19382464ad6)
 
 **Recommendations**
 **- Marketing Strategies**
