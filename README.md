@@ -265,9 +265,10 @@ Loan approval requires evaluating applicants’ financial profiles, including in
 **Literature Review**
 - Loan Approval Factors: Studies (Haron et al., 2013) emphasized collateral, financial stability, and credit history as key determinants for loan approval. The "5Cs" framework (Character, Capacity, Capital, Collateral, and Conditions) further standardized evaluations.
 - Machine Learning Models: Logistic regression and Random Forest models emerged as effective predictors of loan defaults (Serengil et al., 2021). Random Forest achieved 92% accuracy, outperforming traditional methods.
-- **Imputation Techniques**: Addressing missing values via statistical imputation methods (mean, mode) enhanced data consistency and model accuracy.
+
   
 **Skills Demonstrated**
+
 **1. Data Preparation and Cleaning**
 - Dataset: The data comprised 614 training observations with variables such as gender, marital status, income, loan amount, and approval status.
   
@@ -304,7 +305,7 @@ Loan approval requires evaluating applicants’ financial profiles, including in
 - Created interactive data visualizations to illustrate:
 - Distribution of loan approvals across applicant demographics.
 - Loan amounts segmented by employment and marital status.
-- 
+  
 **Key Achievements**
 - Data Imputation: Addressed 15% of missing values across variables, improving model reliability.
 - Model Accuracy: The logistic regression model achieved 85% predictive accuracy, enabling actionable decisions.
@@ -315,3 +316,52 @@ Loan approval requires evaluating applicants’ financial profiles, including in
   
 **Conclusion**
 This project demonstrated my proficiency in data analysis, modeling, and using tools like SAS and SQL to solve complex problems. By automating loan approvals, I contributed to LFI’s operational efficiency and decision-making capabilities. These skills reflect my ability to handle data-driven challenges and deliver impactful solutions.
+
+# **Customer Retention Strategies Using SAP Lumira Discovery**
+**Introduction**
+I utilized SAP Lumira Discovery to analyze and visualize customer retention strategies for Global Bike Inc. (GBI). Through comprehensive data exploration and insights generation, I developed actionable strategies to enhance customer retention and revenue. My work demonstrates expertise in data analysis, business intelligence, and visualization tools, tailored to address organizational goals.
+
+**Objective**
+The primary aim of this project was to:
+- Analyze customer churn and retention trends in the USA from 2016 to 2022.
+- Propose data-driven strategies for customer retention to boost revenue using insights from SAP Lumira.
+
+**Data Preparation**
+The dataset, extracted from GBI's ERP system, spanned sales data from 2016 to 2023 (35030 rows, 51 attributes). 
+Key variables included:
+- Temporal attributes (Year, Quarter, Month)
+- Customer attributes (City, State, Customer Name)
+- Product metrics (Quantity, Revenue, Price, Profit Margin, Discount) Using SAP Lumira Discovery, I transformed raw data into visual dashboards, emphasizing customer segmentation, sales performance, and product profitability.
+  
+**Analysis and Insights**
+**Revenue Trends**
+- Identified seasonal revenue peaks in Q2 and Q4, with sharp declines in Q3.
+- High-revenue customers (e.g., Rocky Mountain Bike, Socal Bikes) contributed the majority of profits, while low-revenue customers showed churn patterns.
+**Product Performance**
+- Professional Touring Bikes (various colors) consistently generated the highest profit margins.
+- Men’s and Women’s Off-Road Bikes had lower sales and profit contributions, indicating opportunities for strategic bundling or marketing.
+**Discount Strategies**
+- Significant discounts on top-performing products (e.g., Professional Touring Bikes) boosted revenue.
+- Lack of discounts for some customers correlated with churn (e.g., DC Bikes).
+**Regional Analysis**
+- US West customers contributed higher revenue and profit margins compared to the US East.
+- Accessories, such as elbow pads and knee pads, showed stable demand but lower profit margins.
+
+**Outcomes and Deliverables**
+a. Balanced Discount Strategies
+- Periodic discounts on high-demand products to retain top customers.
+- Focused discounts for at-risk customers to prevent churn.
+
+b. Seasonal Marketing Campaigns
+- Targeted promotions during peak revenue periods (Q2, Q4).
+- Incentivized sales during low-demand quarters (Q3).
+  
+c. Loyalty Programs
+- Reward systems for high-value customers to encourage repeat purchases.
+  
+d. Product Optimization
+- Focused on high-revenue products (e.g., Touring Bikes).
+- Bundled underperforming products with popular items to increase sales.
+
+**Conclusion**
+This project highlighted my ability to utilize SAP Lumira Discovery for advanced data analysis and visualization. By applying a structured approach to customer retention, I developed evidence-based strategies that align with organizational goals. My expertise in business intelligence tools and data-driven decision-making equips me to deliver impactful results in dynamic business environments.
