@@ -427,6 +427,7 @@ Loan approval requires evaluating applicants’ financial profiles, including in
 This project demonstrated my proficiency in data analysis, modeling, and using tools like SAS and SQL to solve complex problems. By automating loan approvals, I contributed to LFI’s operational efficiency and decision-making capabilities. These skills reflect my ability to handle data-driven challenges and deliver impactful solutions.
 
 # **Customer Retention Strategies Using SAP Lumira Discovery**
+
 **Introduction**
 I utilized SAP Lumira Discovery to analyze and visualize customer retention strategies for Global Bike Inc. (GBI). Through comprehensive data exploration and insights generation, I developed actionable strategies to enhance customer retention and revenue. My work demonstrates expertise in data analysis, business intelligence, and visualization tools, tailored to address organizational goals.
 
@@ -446,12 +447,19 @@ Key variables included:
 
 **Revenue Trends**
 - Identified seasonal revenue peaks in Q2 and Q4, with sharp declines in Q3.
-- High-revenue customers (e.g., Rocky Mountain Bike, Socal Bikes) contributed the majority of profits, while low-revenue customers showed churn patterns.4
-  
+- High-revenue customers (e.g., Rocky Mountain Bike, Socal Bikes) contributed the majority of profits, while low-revenue customers showed churn patterns.
+
+  ![image](https://github.com/user-attachments/assets/b0b2f6c0-b1f0-4003-97ab-4d4a568e0c81)
+
+  ![image](https://github.com/user-attachments/assets/73c09d10-f899-4695-933f-49cc94b535aa)
+
+
 **Product Performance**
 - Professional Touring Bikes (various colors) consistently generated the highest profit margins.
 - Men’s and Women’s Off-Road Bikes had lower sales and profit contributions, indicating opportunities for strategic bundling or marketing.
-  
+
+  ![image](https://github.com/user-attachments/assets/ba8b1dfc-a2ce-4ec7-90c7-64a33df4d9f1)
+
 **Discount Strategies**
 - Significant discounts on top-performing products (e.g., Professional Touring Bikes) boosted revenue.
 - Lack of discounts for some customers correlated with churn (e.g., DC Bikes).
@@ -459,8 +467,13 @@ Key variables included:
 **Regional Analysis**
 - US West customers contributed higher revenue and profit margins compared to the US East.
 - Accessories, such as elbow pads and knee pads, showed stable demand but lower profit margins.
+  
+  ![image](https://github.com/user-attachments/assets/0a835033-ae72-4213-90c5-472e044e41d7)
+
+  ![image](https://github.com/user-attachments/assets/85445974-640d-4b20-a89a-ace82d7381e4)
 
 **Outcomes and Deliverables**
+
 a. Balanced Discount Strategies
 - Periodic discounts on high-demand products to retain top customers.
 - Focused discounts for at-risk customers to prevent churn.
