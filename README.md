@@ -76,6 +76,7 @@ Insights:
 This project demonstrates the application of advanced machine learning techniques and model optimization strategies to solve a real-world business problem. The resulting models provide actionable insights for targeted customer retention efforts, enabling telecommunications firms to minimize churn and maximize customer lifetime value.
 
 # **Project Title: Hotel Reservation Cancellation Prediction Using Data Analysis and Statistical Techniques in SAS**
+
 **Abstract**
 This project investigates the factors influencing hotel reservation cancellations using descriptive and inferential statistical methods in SAS. By exploring key attributes such as lead time, average price, and customer behavior, this study provides actionable insights for hotel management to optimize pricing strategies, improve resource allocation, and enhance customer retention. Key analyses include data preprocessing, exploratory data analysis (EDA), feature engineering, and hypothesis testing. Results highlight that longer lead times and higher average booking prices significantly increase cancellation rates.
 
@@ -111,11 +112,6 @@ This project investigates the factors influencing hotel reservation cancellation
 
 **Feature Engineering:**
 - Feature Creation & One-hot Encoding
-
-![image](https://github.com/user-attachments/assets/0e64d185-dba7-4d4a-a919-6953cbf90d34)
-
-![image](https://github.com/user-attachments/assets/d1e9b421-b22a-423c-bdbf-9ebef7178f83)
-
 
 **Visualization:**
 - Boxplots and histograms revealed that canceled bookings were skewed toward higher lead times and prices.
@@ -186,11 +182,6 @@ Source: Kaggle dataset on credit card customer attrition.
   ![image](https://github.com/user-attachments/assets/c94a94a2-3931-42e8-bcad-70602edc4ff6)
 
 - Data Cleaning & Preprocessing: Handled skewed data, standardized variables, and applied dummy encoding to categorical variables for clustering.
-  
-  ![image](https://github.com/user-attachments/assets/fc06cffc-d875-4810-8fb1-6e8deef351ec)
-
-  ![image](https://github.com/user-attachments/assets/93d34ad1-7a25-4c62-b677-725947fecf81)
-
 
 **Exploratory Data Analysis (EDA):**
 - Univariate analysis to examine distributions (e.g., customer age, credit utilization).
@@ -224,18 +215,13 @@ Source: Kaggle dataset on credit card customer attrition.
 - Cluster 3: High credit limit and transaction counts; unexplored attrition reasons.
 
 **Existing Customer Cluster Profile**
-  
-  ![image](https://github.com/user-attachments/assets/4f97edc4-fa61-418f-b68c-664f7b888afd)
-  
+
   ![image](https://github.com/user-attachments/assets/54f18faa-23fd-4faa-9476-8b165794ff4e)
   
-  ![image](https://github.com/user-attachments/assets/43324163-0aa9-4dd9-8975-65e0fcfeb60d)
-
 **Attrited Customer Cluster Profile**
 
   ![image](https://github.com/user-attachments/assets/b903ee55-a070-4393-8beb-347685755a59)
 
-  ![image](https://github.com/user-attachments/assets/b6896538-77b3-4090-88f3-edd1ffa1e3f6)
   
 **3. Model Validation**
 - Used a hybrid clustering and decision tree model to validate cluster assignments.
@@ -342,8 +328,6 @@ Loan approval requires evaluating applicants’ financial profiles, including in
 
   ![image](https://github.com/user-attachments/assets/840738bc-54bf-417f-b4a6-5b391c7dcb8f)
 
-  ![image](https://github.com/user-attachments/assets/05d252ba-98e5-41cc-be17-f332fb53e41d)
-
 - **Continuous Variables**: Imputed missing values using the mean or median based on skewness.
 
   ![image](https://github.com/user-attachments/assets/fd2f6dab-a152-44df-9b8c-60c2df08e012)
@@ -361,6 +345,7 @@ Loan approval requires evaluating applicants’ financial profiles, including in
 **Examples of EDA:** 
 
 - Univariate Analysis:
+  
   ![image](https://github.com/user-attachments/assets/743e5398-8dd5-40a9-bd49-73c67dbcc370)
 
   ![image](https://github.com/user-attachments/assets/d0fcbcd3-a2b9-4ce6-b2d1-01c7855047ac)
@@ -378,8 +363,6 @@ Loan approval requires evaluating applicants’ financial profiles, including in
 - Achieved model interpretability by analyzing feature significance.
 
   ![image](https://github.com/user-attachments/assets/0d87a352-3847-451d-a23e-392eae65a6da)
-
-  ![image](https://github.com/user-attachments/assets/6a9a73df-0f0d-4006-868a-4193370f666b)
 
 
 **4. SAS Macro Expertise**
