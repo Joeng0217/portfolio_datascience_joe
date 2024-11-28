@@ -57,7 +57,7 @@ RF with Randomized Search Hyperparameters (n_estimators= 150, min_samples_split=
 **Conclusion**
 This project demonstrates the application of advanced machine learning techniques and model optimization strategies to solve a real-world business problem. The resulting models provide actionable insights for targeted customer retention efforts, enabling telecommunications firms to minimize churn and maximize customer lifetime value.
 
-# # **Project Title: Hotel Reservation Cancellation Prediction Using Data Analysis and Statistical Techniques in SAS**
+# **Project Title: Hotel Reservation Cancellation Prediction Using Data Analysis and Statistical Techniques in SAS**
 **Abstract**
 This project investigates the factors influencing hotel reservation cancellations using descriptive and inferential statistical methods in SAS. By exploring key attributes such as lead time, average price, and customer behavior, this study provides actionable insights for hotel management to optimize pricing strategies, improve resource allocation, and enhance customer retention. Key analyses include data preprocessing, exploratory data analysis (EDA), feature engineering, and hypothesis testing. Results highlight that longer lead times and higher average booking prices significantly increase cancellation rates.
 
@@ -247,9 +247,71 @@ The superstore sought to:
 **Regional Strategies**
 - Maximize investment in the West region while improving operations in the Central region.
 - Promote high-margin products like Copiers and Phones in the East region during low-performing months.
-- Segment Strategies
+  
+**Segment Strategies**
 - Bundle office supplies with high-profit technology products to boost sales.
 - Optimize inventory management for underperforming products like tables and prioritize high-demand items in peak seasons.
 
 **Conclusion**
 This project demonstrates proficiency in leveraging Tableau to extract actionable insights from large datasets. The interactive dashboards provided clarity on sales trends, regional performance, and customer behavior, enabling data-driven strategies for improving profitability and customer engagement. 
+
+# **Loan Approval Prediction using SQL and SAS**
+**Project Background**
+LFI, headquartered in New York, provides financial support to SMEs. The manual loan approval process faced inefficiencies due to high application volumes, human errors, and time constraints. Automating this process was crucial to streamline decision-making, minimize risks, and enhance business credibility.
+
+**Problem Statement**
+Loan approval requires evaluating applicants’ financial profiles, including income, credit history, and loan amount. Manual evaluations led to inconsistencies and missed opportunities. This project aimed to leverage historical data for developing a predictive model to classify loan applicants into high or low risk, enabling efficient and fair loan approvals.
+
+**Literature Review**
+- Loan Approval Factors: Studies (Haron et al., 2013) emphasized collateral, financial stability, and credit history as key determinants for loan approval. The "5Cs" framework (Character, Capacity, Capital, Collateral, and Conditions) further standardized evaluations.
+- Machine Learning Models: Logistic regression and Random Forest models emerged as effective predictors of loan defaults (Serengil et al., 2021). Random Forest achieved 92% accuracy, outperforming traditional methods.
+- **Imputation Techniques**: Addressing missing values via statistical imputation methods (mean, mode) enhanced data consistency and model accuracy.
+  
+**Skills Demonstrated**
+**1. Data Preparation and Cleaning**
+- Dataset: The data comprised 614 training observations with variables such as gender, marital status, income, loan amount, and approval status.
+  
+**Techniques Used:**
+- **Identified and addressed missing values:**
+- **Categorical Variables**: Imputed missing values using the mode (e.g., gender).
+- **Continuous Variables**: Imputed missing values using the mean or median based on skewness.
+- Outlier detection ensured data consistency for continuous variables like income and loan amount.
+  
+**2. Exploratory Data Analysis (EDA)**
+- Conducted univariate analysis to examine distributions:
+- Loan Amount: Positively skewed with most loans between $100K–$200K.
+- Candidate Income: Highlighted significant income disparities among applicants.
+- Performed bivariate analysis to uncover relationships:
+- Married individuals had a higher loan approval rate (68%) compared to unmarried.
+- Employed candidates received higher loan amounts on average.
+  
+**3. Feature Engineering**
+- Standardized numerical features for model compatibility.
+- Encoded categorical variables for machine learning readiness using SAS.
+
+**4. Predictive Modeling**
+- Developed a Logistic Regression model in SAS to predict loan approval status:
+- Dependent Variable: Loan approval (Yes/No).
+- Independent Variables: Income, employment status, loan amount, and credit history.
+- Achieved model interpretability by analyzing feature significance.
+  
+**5. SQL Expertise**
+- Queried historical datasets to derive critical insights:
+- Filtered applications by loan status, gender, and location to assess demographic patterns.
+- Calculated aggregate statistics for income and loan amounts.
+  
+**6. Visualization**
+- Created interactive data visualizations to illustrate:
+- Distribution of loan approvals across applicant demographics.
+- Loan amounts segmented by employment and marital status.
+- 
+**Key Achievements**
+- Data Imputation: Addressed 15% of missing values across variables, improving model reliability.
+- Model Accuracy: The logistic regression model achieved 85% predictive accuracy, enabling actionable decisions.
+  
+**Data Insights:**
+- Males constituted 80% of applicants, highlighting a gender disparity in financial service access.
+- Majority of loans originated from urban areas, indicating location-based access differences.
+  
+**Conclusion**
+This project demonstrated my proficiency in data analysis, modeling, and using tools like SAS and SQL to solve complex problems. By automating loan approvals, I contributed to LFI’s operational efficiency and decision-making capabilities. These skills reflect my ability to handle data-driven challenges and deliver impactful solutions.
