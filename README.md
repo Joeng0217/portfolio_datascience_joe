@@ -79,6 +79,7 @@ This project investigates the factors influencing hotel reservation cancellation
 - Target Variable: Booking status (canceled or not canceled).
 
 **Process Breakdown**
+
 **1. Data Preprocessing**
 - Handling Missing Values:
 - Replaced categorical missing values with the mode (e.g., "Online" for market segment).
@@ -124,6 +125,68 @@ This project investigates the factors influencing hotel reservation cancellation
 
 **Conclusion**
 This project highlights critical factors influencing hotel reservation cancellations, including lead time, pricing, and customer behavior. Statistical analysis revealed actionable insights to optimize revenue management, improve booking stability, and enhance customer retention strategies. These findings can guide data-driven decision-making in the hospitality industry, promoting more effective operational planning and resource allocation.
+
+# **Project Title: Customer Segmentation for Retention Strategies in the Banking Sector**
+
+**Abstract**
+This project explores customer segmentation to address churn and retention in the banking industry, using clustering and decision tree models implemented in SAS Enterprise Miner. By analyzing a Kaggle dataset with 22 features and 10,127 rows, the study identifies distinct customer profiles among existing and churned customers. The findings enable targeted retention strategies, emphasizing customer engagement and personalized incentives to reduce attrition and enhance profitability.
+
+**Dataset Overview**
+Source: Kaggle dataset on credit card customer attrition.
+
+**Key Features:**
+- Demographics: Age, gender, marital status, education level.
+- Behavioral Metrics: Total transactions, transaction amounts, inactivity periods.
+- Financial Metrics: Credit limit, average open-to-buy, revolving balance, utilization ratio.
+  
+**Target Groups:**
+- Existing customers (retained).
+- Attrite customers (churned).
+
+**Skills Demonstrated**
+- Data Cleaning & Preprocessing: Handled skewed data, standardized variables, and applied dummy encoding to categorical variables for clustering.
+
+**Exploratory Data Analysis (EDA):**
+- Univariate analysis to examine distributions (e.g., customer age, credit utilization).
+- Identification of key trends (e.g., churned customers had lower transaction counts).
+  
+**Clustering Models:**
+- Determined optimal cluster numbers using misclassification rates.
+- Segmented existing customers into 4 clusters and churned customers into 3 clusters.
+- Decision Tree Modeling: Validated cluster assignments with a hybrid approach, achieving misclassification rates below 0.5%.
+- Feature Engineering: Ranked variable importance for segmentation (e.g., credit limit, total transactions, income category).
+- Statistical Insights: Highlighted differences between clusters, such as higher credit limits in high-value segments and lower utilization in churn-prone groups.
+
+**Process Breakdown**
+
+**1. Data Preprocessing**
+- Identified and retained features relevant for clustering.
+- Handled skewed variables (e.g., total transaction amount) using log transformation.
+- Converted categorical variables to dummy variables for clustering.
+- Standardized numeric variables for uniform scaling.
+  
+**2. Cluster Analysis**
+- **Existing Customers**: Segmented into 4 clusters based on income, credit limit, utilization ratio, and transaction behaviors.
+- Cluster 1: High-income males with unused credit limits; low utilization.
+- Cluster 2: Low-income individuals with high credit utilization; financial risk.
+- Cluster 3: Gold card holders with high-value transactions.
+- Cluster 4: Balanced segment with moderate credit usage.
+
+**Churned Customers**: Segmented into 3 clusters based on credit behavior and transaction patterns.
+- Cluster 1: Low transaction volume; low utilization ratio.
+- Cluster 2: Blue card holders with average utilization; less engagement.
+- Cluster 3: High credit limit and transaction counts; unexplored attrition reasons.
+  
+**3. Model Validation**
+- Used a hybrid clustering and decision tree model to validate cluster assignments.
+- Achieved low misclassification rates:
+- Existing Customers: Training (0.20%), Validation (0.24%).
+- Churned Customers: Training (0.35%), Validation (0.41%).
+  
+**Key insights** show credit limit, transaction amounts, and income as top churn predictors. High-income customers with low utilization face less risk, while low-income and inactive segments are more prone to churn. Retention strategies include premium card upgrades, cashback rewards, and budget tools for existing customers, while re-engagement for churned customers focuses on targeted offers, low-interest cards, and real-time churn detection.
+
+**Conclusion**
+This project effectively leverages data segmentation to design actionable retention strategies. By combining clustering and decision tree models, the study achieves meaningful segmentation with minimal misclassification. Insights derived from customer profiles provide a foundation for data-driven interventions, reducing churn and enhancing customer loyalty in the banking sector.
 
 
 
