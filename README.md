@@ -147,7 +147,6 @@ This project investigates the factors influencing hotel reservation cancellation
 
 
 **Examples of EDA:**
-![image](https://github.com/user-attachments/assets/b5dafaf9-3982-4a8d-8b9a-7ed2fe2cd124)
 
 ![image](https://github.com/user-attachments/assets/c1a316b1-cafc-4690-b55f-edc9babcc9e7)
 
