@@ -1,4 +1,4 @@
-##  **Prediction of Customer Churn Using Machine Learning and Ensemble Techniques**
+![image](https://github.com/user-attachments/assets/a12ddf5b-c98d-4b73-b351-56b1021fa694)##  **Prediction of Customer Churn Using Machine Learning and Ensemble Techniques**
 # Abstract
 This project aims to predict customer churn in the telecommunications industry using various machine learning models, including Logistic Regression, Random Forest, and Support Vector Machine, alongside ensemble methods like XGBoost, AdaBoost, and Extra Trees Classifier. Key data preprocessing techniques such as SMOTE for class balancing and Principal Component Analysis (PCA) for dimensionality reduction were utilized. The Random Forest model optimized with Randomized Search CV achieved the highest accuracy of 86.10%, followed closely by XGBoost at 85.84%. The insights derived from this analysis support proactive customer retention strategies.
 
@@ -194,6 +194,7 @@ This project highlights critical factors influencing hotel reservation cancellat
 
 **Abstract**
 This project explores customer segmentation to address churn and retention in the banking industry, using clustering and decision tree models implemented in SAS Enterprise Miner. By analyzing a Kaggle dataset with 22 features and 10,127 rows, the study identifies distinct customer profiles among existing and churned customers. The findings enable targeted retention strategies, emphasizing customer engagement and personalized incentives to reduce attrition and enhance profitability.
+![image](https://github.com/user-attachments/assets/9c2368b3-1633-4731-9a9f-568cc31c2917)
 
 **Dataset Overview**
 Source: Kaggle dataset on credit card customer attrition.
@@ -208,7 +209,13 @@ Source: Kaggle dataset on credit card customer attrition.
 - Attrite customers (churned).
 
 **Skills Demonstrated**
+- SAS Enterprise Miner (Pipeline)
+![image](https://github.com/user-attachments/assets/c94a94a2-3931-42e8-bcad-70602edc4ff6)
+
 - Data Cleaning & Preprocessing: Handled skewed data, standardized variables, and applied dummy encoding to categorical variables for clustering.
+![image](https://github.com/user-attachments/assets/fc06cffc-d875-4810-8fb1-6e8deef351ec)
+![image](https://github.com/user-attachments/assets/93d34ad1-7a25-4c62-b677-725947fecf81)
+
 
 **Exploratory Data Analysis (EDA):**
 - Univariate analysis to examine distributions (e.g., customer age, credit utilization).
@@ -240,6 +247,16 @@ Source: Kaggle dataset on credit card customer attrition.
 - Cluster 1: Low transaction volume; low utilization ratio.
 - Cluster 2: Blue card holders with average utilization; less engagement.
 - Cluster 3: High credit limit and transaction counts; unexplored attrition reasons.
+
+**Existing Customer Cluster Profile**
+  ![image](https://github.com/user-attachments/assets/5dfd705d-185b-4f2e-8f0e-b574f9efba3b)
+  ![image](https://github.com/user-attachments/assets/4f97edc4-fa61-418f-b68c-664f7b888afd)
+  ![image](https://github.com/user-attachments/assets/54f18faa-23fd-4faa-9476-8b165794ff4e)
+  ![image](https://github.com/user-attachments/assets/43324163-0aa9-4dd9-8975-65e0fcfeb60d)
+
+**Attrited Customer Cluster Profile**
+(![image](https://github.com/user-attachments/assets/b903ee55-a070-4393-8beb-347685755a59)
+![image](https://github.com/user-attachments/assets/b6896538-77b3-4090-88f3-edd1ffa1e3f6)
   
 **3. Model Validation**
 - Used a hybrid clustering and decision tree model to validate cluster assignments.
