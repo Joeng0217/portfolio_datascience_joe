@@ -425,8 +425,6 @@ Key variables included:
 **Regional Analysis**
 - US West customers contributed higher revenue and profit margins compared to the US East.
 - Accessories, such as elbow pads and knee pads, showed stable demand but lower profit margins.
-  
-  ![image](https://github.com/user-attachments/assets/0a835033-ae72-4213-90c5-472e044e41d7)
 
   ![image](https://github.com/user-attachments/assets/85445974-640d-4b20-a89a-ace82d7381e4)
 
