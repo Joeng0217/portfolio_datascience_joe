@@ -22,12 +22,9 @@ This project aims to predict customer churn in the telecommunications industry u
 - Class Balancing: Addressed 26.6% churn rate imbalance using **SMOTE**.
 
 - Feature Encoding: Converted binary and categorical features using**label** and **one-hot encoding**.
-  
-![image](https://github.com/user-attachments/assets/2458bf40-43d4-4919-b8e4-0fea56acf643)
 
 - Scaling: **Min-Max Scaling** applied to normalize skewed numerical data.
   
-![image](https://github.com/user-attachments/assets/a4741a71-3097-460c-96f8-f8ca39af84c7)
 
 **3. Exploratory Data Analysis (EDA)**
 Insights:
@@ -55,8 +52,6 @@ Insights:
   
 ![image](https://github.com/user-attachments/assets/b4ca4b13-5847-4307-a01c-bd285b51ffb0)
 
-![image](https://github.com/user-attachments/assets/3030b68d-2bc8-43d6-8672-2fa8000a575f)
-
 
 **5. Model Validation and Tuning**
 - Cross-Validation: Repeated 10-fold CV achieved the most robust validation scores.
@@ -66,10 +61,6 @@ Insights:
 - SVM fine-tuned with kernel=rbf, gamma=auto, and C=7.
 - Logistic Regression optimized with solver=saga and C=1.0001.
   
-  ![image](https://github.com/user-attachments/assets/d12a895b-5b85-42f4-83d0-b4ffd7017e30)
-
-
-
 **Performance:**
 - RF with Randomized Search Hyperparameters (n_estimators= 150, min_samples_split= 10, min_samples_leaf= 4, max_features= 'log2', max_depth= 50, criterion= 'gini', bootstrap= True) achieved the highest accuracy of **86.10%**
   
