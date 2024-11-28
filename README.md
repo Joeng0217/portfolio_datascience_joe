@@ -208,10 +208,13 @@ Source: Kaggle dataset on credit card customer attrition.
 
 **Skills Demonstrated**
 - SAS Enterprise Miner (Pipeline)
+  
 ![image](https://github.com/user-attachments/assets/c94a94a2-3931-42e8-bcad-70602edc4ff6)
 
 - Data Cleaning & Preprocessing: Handled skewed data, standardized variables, and applied dummy encoding to categorical variables for clustering.
+  
 ![image](https://github.com/user-attachments/assets/fc06cffc-d875-4810-8fb1-6e8deef351ec)
+
 ![image](https://github.com/user-attachments/assets/93d34ad1-7a25-4c62-b677-725947fecf81)
 
 
@@ -300,6 +303,7 @@ The superstore sought to:
 - Visualized total sales ($733K), profit ($93K), and quantity sold (12,476 units) in 2023, with a 20.36% YoY sales increase.
 - Identified subcategories such as "Phones" and "Chairs" as top-performing products in terms of sales, while "Copiers" were the most profitable.
 - Highlighted seasonal trends: November had the highest sales, while February was the lowest.
+
 ![image](https://github.com/user-attachments/assets/32071311-6e16-4fec-830d-17fe7e6497e6)
 
 **2. Customer Dashboard**
@@ -307,18 +311,21 @@ The superstore sought to:
 - Total customers increased by 8.6% YoY, with top customers generating 11K-14K in sales and $4K-$6K in profit.
 - Highlighted the top 10 most profitable customers and their purchasing trends.
 - Suggested customer retention strategies, such as loyalty programs and personalized promotions.
+
  ![image](https://github.com/user-attachments/assets/5e028ea3-3750-409a-9f3c-e27c1924ef91)
 
 **3. Regional Sales Dashboard**
 - Mapped sales and profits by region:
 - The West region accounted for 47% of total profit, while the Central region had the lowest contribution (8%).
 - Used bump charts to track regional performance over time and scatter plots to show subcategory-level performance.
+
 ![image](https://github.com/user-attachments/assets/bcb569f6-8dbe-492f-959f-8907d418f0b0)
  
 **4. Segment Dashboard**
 - Segmented sales by Consumer, Corporate, and Home Office categories:
 - Consumers drove the majority of sales ($391K), followed by Corporate ($229K) and Home Office ($122K).
 - Identified technology items like "Copiers" and "Phones" as key drivers of profitability across all segments.
+
 ![image](https://github.com/user-attachments/assets/93ec4d03-88f2-438d-8036-b19382464ad6)
 
 **Recommendations**
@@ -358,8 +365,16 @@ Loan approval requires evaluating applicants’ financial profiles, including in
 **Techniques Used:**
 - **Identified and addressed missing values:**
 - **Categorical Variables**: Imputed missing values using the mode (e.g., gender).
+
+  ![image](https://github.com/user-attachments/assets/840738bc-54bf-417f-b4a6-5b391c7dcb8f)
+
+  ![image](https://github.com/user-attachments/assets/05d252ba-98e5-41cc-be17-f332fb53e41d)
+
 - **Continuous Variables**: Imputed missing values using the mean or median based on skewness.
-- Outlier detection ensured data consistency for continuous variables like income and loan amount.
+
+  ![image](https://github.com/user-attachments/assets/fd2f6dab-a152-44df-9b8c-60c2df08e012)
+
+- **Outlier detection** ensured data consistency for continuous variables like income and loan amount.
   
 **2. Exploratory Data Analysis (EDA)**
 - Conducted univariate analysis to examine distributions:
@@ -368,27 +383,38 @@ Loan approval requires evaluating applicants’ financial profiles, including in
 - Performed bivariate analysis to uncover relationships:
 - Married individuals had a higher loan approval rate (68%) compared to unmarried.
 - Employed candidates received higher loan amounts on average.
-  
-**3. Feature Engineering**
-- Standardized numerical features for model compatibility.
-- Encoded categorical variables for machine learning readiness using SAS.
 
-**4. Predictive Modeling**
+**Examples of EDA:** 
+
+- Univariate Analysis:
+  ![image](https://github.com/user-attachments/assets/743e5398-8dd5-40a9-bd49-73c67dbcc370)
+
+  ![image](https://github.com/user-attachments/assets/d0fcbcd3-a2b9-4ce6-b2d1-01c7855047ac)
+
+- Bivariate Analysis:
+
+  ![image](https://github.com/user-attachments/assets/33bacd5d-807d-4ad1-87fe-5077753d6fa3)
+
+  ![image](https://github.com/user-attachments/assets/66671058-4862-4623-bdda-6477bac492be)
+
+**3. Predictive Modeling**
 - Developed a Logistic Regression model in SAS to predict loan approval status:
 - Dependent Variable: Loan approval (Yes/No).
 - Independent Variables: Income, employment status, loan amount, and credit history.
 - Achieved model interpretability by analyzing feature significance.
+
+  ![image](https://github.com/user-attachments/assets/0d87a352-3847-451d-a23e-392eae65a6da)
+
+  ![image](https://github.com/user-attachments/assets/6a9a73df-0f0d-4006-868a-4193370f666b)
+
+
+**4. SAS Macro Expertise**
+- Utilized SAS Macros to automate querying and analysis by enhancing efficiency and reproducibility.
+
+  ![image](https://github.com/user-attachments/assets/911015af-29aa-4cf3-930f-0d9ed94d923f)
   
-**5. SQL Expertise**
-- Queried historical datasets to derive critical insights:
-- Filtered applications by loan status, gender, and location to assess demographic patterns.
-- Calculated aggregate statistics for income and loan amounts.
-  
-**6. Visualization**
-- Created interactive data visualizations to illustrate:
-- Distribution of loan approvals across applicant demographics.
-- Loan amounts segmented by employment and marital status.
-  
+  ![image](https://github.com/user-attachments/assets/60cba531-b76f-4093-8636-c34374a7ee13)
+
 **Key Achievements**
 - Data Imputation: Addressed 15% of missing values across variables, improving model reliability.
 - Model Accuracy: The logistic regression model achieved 85% predictive accuracy, enabling actionable decisions.
