@@ -20,8 +20,14 @@ This project aims to predict customer churn in the telecommunications industry u
 **2. Data Preprocessing**
 
 - Class Balancing: Addressed 26.6% churn rate imbalance using **SMOTE**.
-- Feature Encoding: Converted binary and categorical features using label and **one-hot encoding**.
-- Scaling: Min-Max Scaling applied to normalize skewed numerical data.
+![image](https://github.com/user-attachments/assets/ffa1c309-8681-4b44-8540-c72ae8219f69)
+
+- Feature Encoding: Converted binary and categorical features using**label** and **one-hot encoding**.
+![image](https://github.com/user-attachments/assets/675076c0-b2d3-45d4-95cc-56a814ad1a30)
+![image](https://github.com/user-attachments/assets/2458bf40-43d4-4919-b8e4-0fea56acf643)
+
+- Scaling: **Min-Max Scaling** applied to normalize skewed numerical data.
+![image](https://github.com/user-attachments/assets/a4741a71-3097-460c-96f8-f8ca39af84c7)
 
 **3. Exploratory Data Analysis (EDA)**
 Insights:
@@ -30,6 +36,12 @@ Insights:
 - Non-churners are predominantly on two-year contracts with lower monthly charges.
 - Churners commonly use electronic checks as their payment method.
 - Visualizations: **Correlation heatmaps, boxplots, and distribution charts highlighted key trends**.
+![image](https://github.com/user-attachments/assets/242ddf34-eb51-483f-9b46-74465887876b)
+![image](https://github.com/user-attachments/assets/c2845634-3209-4cbd-955d-a6137fe5fe5e)
+![image](https://github.com/user-attachments/assets/f5d27d8e-b06b-4aae-b804-7058243d4a8c)
+![image](https://github.com/user-attachments/assets/ba3e996d-5100-4de4-9151-17beb066b0a2)
+![image](https://github.com/user-attachments/assets/da4b12fc-2f06-4701-be32-e204db0316c7)
+
 
 **4. Model Implementation**
 
@@ -40,12 +52,15 @@ Insights:
 
 **5. Model Validation and Tuning**
 - Cross-Validation: Repeated 10-fold CV achieved the most robust validation scores.
+![image](https://github.com/user-attachments/assets/cfc65c6a-40d3-4465-8a9c-1e49d12d88f6)
 
 **Hyperparameter Tuning:**
 
 - Random Forest optimized with n_estimators=150, max_depth=50, and criterion='gini'.
 - SVM fine-tuned with kernel=rbf, gamma=auto, and C=7.
 - Logistic Regression optimized with solver=saga and C=1.0001.
+  ![image](https://github.com/user-attachments/assets/d12a895b-5b85-42f4-83d0-b4ffd7017e30)
+
 
 **Key Insights**
 **Feature Importance:**
@@ -53,6 +68,8 @@ Top predictors: Total Charges, Monthly Charges, Contract Type (month-to-month), 
 
 **Performance:**
 RF with Randomized Search Hyperparameters (n_estimators= 150, min_samples_split= 10, min_samples_leaf= 4, max_features= 'log2', max_depth= 50, criterion= 'gini', bootstrap= True) achieved the highest accuracy of **86.10%**
+![image](https://github.com/user-attachments/assets/8024f8f6-e25b-498e-bd6d-a86dd973ef92)
+
 
 **Conclusion**
 This project demonstrates the application of advanced machine learning techniques and model optimization strategies to solve a real-world business problem. The resulting models provide actionable insights for targeted customer retention efforts, enabling telecommunications firms to minimize churn and maximize customer lifetime value.
@@ -334,15 +351,19 @@ Key variables included:
 - Product metrics (Quantity, Revenue, Price, Profit Margin, Discount) Using SAP Lumira Discovery, I transformed raw data into visual dashboards, emphasizing customer segmentation, sales performance, and product profitability.
   
 **Analysis and Insights**
+
 **Revenue Trends**
 - Identified seasonal revenue peaks in Q2 and Q4, with sharp declines in Q3.
-- High-revenue customers (e.g., Rocky Mountain Bike, Socal Bikes) contributed the majority of profits, while low-revenue customers showed churn patterns.
+- High-revenue customers (e.g., Rocky Mountain Bike, Socal Bikes) contributed the majority of profits, while low-revenue customers showed churn patterns.4
+  
 **Product Performance**
 - Professional Touring Bikes (various colors) consistently generated the highest profit margins.
 - Men’s and Women’s Off-Road Bikes had lower sales and profit contributions, indicating opportunities for strategic bundling or marketing.
+  
 **Discount Strategies**
 - Significant discounts on top-performing products (e.g., Professional Touring Bikes) boosted revenue.
 - Lack of discounts for some customers correlated with churn (e.g., DC Bikes).
+  
 **Regional Analysis**
 - US West customers contributed higher revenue and profit margins compared to the US East.
 - Accessories, such as elbow pads and knee pads, showed stable demand but lower profit margins.
