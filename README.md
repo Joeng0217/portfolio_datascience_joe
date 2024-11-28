@@ -11,7 +11,9 @@ This project aims to predict customer churn in the telecommunications industry u
 - Programming Libraries: NumPy, Pandas, Scikit-learn, Seaborn, Matplotlib, Plotly, Imbalanced-learn.
 
 **Process Breakdown**
+
 **1. Dataset Overview**
+
 - Source: Kaggle’s Telco Customer Churn Dataset (7043 instances, 21 features). 
 - Features: Customer demographics, account details, and payment history (e.g., gender, tenure, total charges, monthly charges, contract type). 
 - Target Variable: Churn (binary classification: churned vs. non-churned).
