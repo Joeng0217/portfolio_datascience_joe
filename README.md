@@ -3,13 +3,13 @@
 This project aims to predict customer churn in the telecommunications industry using various machine learning models, including Logistic Regression, Random Forest, and Support Vector Machine, alongside ensemble methods like XGBoost, AdaBoost, and Extra Trees Classifier. Key data preprocessing techniques such as SMOTE for class balancing and Principal Component Analysis (PCA) for dimensionality reduction were utilized. The Random Forest model optimized with Randomized Search CV achieved the highest accuracy of 86.10%, followed closely by XGBoost at 85.84%. The insights derived from this analysis support proactive customer retention strategies.
 
 # Skills Demonstrated
-Machine Learning Models: Logistic Regression, Random Forest, Support Vector Machine (SVM), AdaBoost, XGBoost, Extra Trees Classifier.
-Data Preprocessing: Feature engineering, handling missing values, label encoding, one-hot encoding, and class balancing with SMOTE.
-Dimensionality Reduction: PCA with variance preservation (95%).
-Hyperparameter Tuning: Grid Search and Randomized Search CV for model optimization.
-Model Validation: 10-fold and repeated K-fold cross-validation to assess model robustness.
-Evaluation Metrics: ROC-AUC, F1-score, precision, recall, and confusion matrices.
-Programming Libraries: NumPy, Pandas, Scikit-learn, Seaborn, Matplotlib, Plotly, Imbalanced-learn.
+- Machine Learning Models: Logistic Regression, Random Forest, Support Vector Machine (SVM), AdaBoost, XGBoost, Extra Trees Classifier.
+- Data Preprocessing: Feature engineering, handling missing values, label encoding, one-hot encoding, and class balancing with SMOTE.
+- Dimensionality Reduction: PCA with variance preservation (95%).
+- Hyperparameter Tuning: Grid Search and Randomized Search CV for model optimization.
+- Model Validation: 10-fold and repeated K-fold cross-validation to assess model robustness.
+- Evaluation Metrics: ROC-AUC, F1-score, precision, recall, and confusion matrices.
+- Programming Libraries: NumPy, Pandas, Scikit-learn, Seaborn, Matplotlib, Plotly, Imbalanced-learn.
 
 # Process Breakdown
 **1. Dataset Overview**
@@ -188,8 +188,69 @@ Source: Kaggle dataset on credit card customer attrition.
 **Conclusion**
 This project effectively leverages data segmentation to design actionable retention strategies. By combining clustering and decision tree models, the study achieves meaningful segmentation with minimal misclassification. Insights derived from customer profiles provide a foundation for data-driven interventions, reducing churn and enhancing customer loyalty in the banking sector.
 
+# **Project Title: Interactive Visualization of Customer Sales Trends for Strategic Decision-Making**
 
+**Objective:**
+The goal of this project was to analyze the sales, profits, and customer behaviors of a US-based superstore in 2023. The analysis aimed to identify trends in sales performance, customer behavior, regional and segment-level patterns, and actionable insights for improving profitability and operational efficiency.
 
+**Business Problem**
+The superstore sought to:
+- Understand sales trends and profits across products, customers, and regions.
+- Identify underperforming products and regions.
+- Optimize marketing strategies for customer retention and increased sales during key seasons.
 
+**Skills Demonstrated**
+- Data Visualization:
+- Designed interactive dashboards in Tableau, allowing real-time exploration of sales metrics.
+- Created comparative visualizations for year-over-year trends.
+- Built region- and segment-specific analyses using charts such as bump charts, scatter plots, and treemaps.
 
+**Problem-Solving:**
+- Delivered actionable insights by analyzing customer behaviors and product-level profitability.
+- Provided strategic recommendations for marketing and inventory optimization.
+- 
+**Storytelling with Data:**
+- Highlighted insights effectively through dynamic dashboards and summary visuals, ensuring clarity for non-technical stakeholders.
 
+**Data Visualization Process**
+-**1. Sales Dashboard**
+- Visualized total sales ($733K), profit ($93K), and quantity sold (12,476 units) in 2023, with a 20.36% YoY sales increase.
+- Identified subcategories such as "Phones" and "Chairs" as top-performing products in terms of sales, while "Copiers" were the most profitable.
+- Highlighted seasonal trends: November had the highest sales, while February was the lowest.
+![image](https://github.com/user-attachments/assets/32071311-6e16-4fec-830d-17fe7e6497e6)
+
+**2. Customer Dashboard**
+- Analyzed customer distribution and purchasing behavior:
+- Total customers increased by 8.6% YoY, with top customers generating 11K-14K in sales and $4K-$6K in profit.
+- Highlighted the top 10 most profitable customers and their purchasing trends.
+- Suggested customer retention strategies, such as loyalty programs and personalized promotions.
+  ![image](https://github.com/user-attachments/assets/9b21baa2-fddc-4642-b84d-19d4bc22aa43)
+
+  
+**3. Regional Sales Dashboard**
+- Mapped sales and profits by region:
+- The West region accounted for 47% of total profit, while the Central region had the lowest contribution (8%).
+- Used bump charts to track regional performance over time and scatter plots to show subcategory-level performance.
+![image](https://github.com/user-attachments/assets/b60e2a88-d7b3-4651-8670-4c9a86edf8ab)
+  
+**4. Segment Dashboard**
+- Segmented sales by Consumer, Corporate, and Home Office categories:
+- Consumers drove the majority of sales ($391K), followed by Corporate ($229K) and Home Office ($122K).
+- Identified technology items like "Copiers" and "Phones" as key drivers of profitability across all segments.
+![image](https://github.com/user-attachments/assets/7ed8b3f8-de3e-4cbe-b17d-46a9eedec581)
+
+**Recommendations**
+**- Marketing Strategies**
+- Focus on top customers during peak months (September to December) with exclusive offers and promotions.
+- Increase promotional efforts in November to drive sales and convert January traffic into larger purchases.
+- Implement personalized retention strategies for 1-2 order customers to increase lifetime value.
+  
+**Regional Strategies**
+- Maximize investment in the West region while improving operations in the Central region.
+- Promote high-margin products like Copiers and Phones in the East region during low-performing months.
+- Segment Strategies
+- Bundle office supplies with high-profit technology products to boost sales.
+- Optimize inventory management for underperforming products like tables and prioritize high-demand items in peak seasons.
+
+**Conclusion**
+This project demonstrates proficiency in leveraging Tableau to extract actionable insights from large datasets. The interactive dashboards provided clarity on sales trends, regional performance, and customer behavior, enabling data-driven strategies for improving profitability and customer engagement. 
