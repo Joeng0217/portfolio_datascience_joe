@@ -71,6 +71,11 @@ Insights:
 - RF with Randomized Search Hyperparameters (n_estimators= 150, min_samples_split= 10, min_samples_leaf= 4, max_features= 'log2', max_depth= 50, criterion= 'gini', bootstrap= True) achieved the highest accuracy of **86.10%**
 ![image](https://github.com/user-attachments/assets/8024f8f6-e25b-498e-bd6d-a86dd973ef92)
 
+**Comparison of the ensemble models** 
+- Best Performance: **XGBoost** demonstrated the **highest accuracy (85.84%)** and adaptability with hyperparameter tuning and 10 fold cross-validation. 
+- Default Performance: Achieved an accuracy of 78.39%, with precision, recall, and F1 scores at par with accuracy.
+- **Tuned Performance:** Best parameters included max_depth=3, colsample_bytree=0.6, and gamma=0.4.
+
 
 **Conclusion**: 
 This project demonstrates the application of advanced machine learning techniques and model optimization strategies to solve a real-world business problem. The resulting models provide actionable insights for targeted customer retention efforts, enabling telecommunications firms to minimize churn and maximize customer lifetime value.
