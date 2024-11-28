@@ -90,7 +90,6 @@ This project investigates the factors influencing hotel reservation cancellation
 **Dataset Overview**
 - Source: Kaggle’s Hotel Booking Demand Dataset.
 - Size: 36,285 records with 17 attributes.
-![image](https://github.com/user-attachments/assets/e9c43391-05ad-4266-9f02-f84b54fb664c)
 
 **Features:**
 - Categorical: Booking status, room type, market segment, meal type.
