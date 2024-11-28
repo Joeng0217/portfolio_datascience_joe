@@ -249,13 +249,19 @@ Source: Kaggle dataset on credit card customer attrition.
 - Cluster 3: High credit limit and transaction counts; unexplored attrition reasons.
 
 **Existing Customer Cluster Profile**
+
   ![image](https://github.com/user-attachments/assets/5dfd705d-185b-4f2e-8f0e-b574f9efba3b)
+  
   ![image](https://github.com/user-attachments/assets/4f97edc4-fa61-418f-b68c-664f7b888afd)
+  
   ![image](https://github.com/user-attachments/assets/54f18faa-23fd-4faa-9476-8b165794ff4e)
+  
   ![image](https://github.com/user-attachments/assets/43324163-0aa9-4dd9-8975-65e0fcfeb60d)
 
 **Attrited Customer Cluster Profile**
-(![image](https://github.com/user-attachments/assets/b903ee55-a070-4393-8beb-347685755a59)
+
+![image](https://github.com/user-attachments/assets/b903ee55-a070-4393-8beb-347685755a59)
+
 ![image](https://github.com/user-attachments/assets/b6896538-77b3-4090-88f3-edd1ffa1e3f6)
   
 **3. Model Validation**
